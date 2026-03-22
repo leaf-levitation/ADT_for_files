@@ -1,0 +1,162 @@
+
+1. 证明 Vitali 覆盖引理的如下变体：如果集合 $E$ 被一族球 $B$ 以 Vitali 意义所覆盖，且 $0 < m^*(E) < \infty$，那么对于每个 $\varepsilon > 0$，存在 $B$ 中互不相交的球族 $\{B_j\}_{j=1}^\infty$ 使得
+$$m^*\left(E \setminus \bigcup_{j=1}^\infty B_j\right) = 0 \quad \text{且} \quad \sum_{j=1}^\infty |B_j| \le (1 + \varepsilon)m^*(E)$$
+（注：原文中 $m^\star(E)<1$ 视为 $m^\star(E) < \infty$ 的 OCR 误读）。
+
+2. 下面的简单一维覆盖引理可用于多种情形。
+假设 $I_1, I_2, \dots, I_N$ 是 $\mathbb{R}$ 中给定的一组有限开区间。则存在两个有限子族 $I'_1, I'_2, \dots, I'_K$，以及 $I''_1, I''_2, \dots, I''_L$，使得每个子族都由两两不相交的区间组成，并且
+$$\bigcup_{j=1}^N I_j = \bigcup_{k=1}^K I'_k \cup \bigcup_{l=1}^L I''_l$$
+注意，与引理 1.2 相反，这里是整个并集都被覆盖，而不仅仅是部分。
+
+> 6. Problems 153
+
+提示：选择 $I_1^0$ 使其左端点尽可能靠左。丢弃所有包含在 $I_1^0$ 中的区间。如果剩余区间与 $I_1^0$ 不相交，再次选择一个最靠左的区间，并称之为 $I_2^0$。否则，选择一个与 $I_1^0$ 相交但向右延伸尽可能远的区间，并将此区间记为 $I_1^{00}$。重复此过程。
+
+3. 高维情形下没有问题 2 的直接类比。然而，贝西科维奇（Besicovitch）覆盖引理提供了完整的覆盖。该引理的一个版本陈述如下：存在一个整数 $N$（仅依赖于维数 $d$），具有如下性质。假设 $E$ 是 $\mathbb{R}^d$ 中的任意有界集，且被一族球（强）覆盖，即对于每个 $x \in E$，存在一个 $B \in \mathcal{B}$ 其中心为 $x$。那么，存在原集合族 $\mathcal{B}$ 的 $N$ 个子族 $\mathcal{B}_1, \mathcal{B}_2, \dots, \mathcal{B}_N$，使得每个 $\mathcal{B}_j$ 都是互不相交的球的集合，此外，$E \subseteq \bigcup_{B \in \mathcal{B}'} B$，其中 $\mathcal{B}' = \mathcal{B}_1 \cup \mathcal{B}_2 \cup \dots \cup \mathcal{B}_N$。
+
+4. 定义在区间 $(a, b)$ 上的实值函数 $\phi$ 被称为凸函数，如果位于其图像上方的区域 $\{(x, y) \in \mathbb{R}^2 : y > \phi(x), a \le x \le b\}$ 是一个凸集（如第 1 章第 5*节所定义）。等价地，$\phi$ 是凸的，如果
+$$
+\phi(\mu x_1 + (1-\mu)x_2) \le \mu \phi(x_1) + (1-\mu)\phi(x_2)
+$$
+对于任意 $x_1, x_2 \in (a, b)$ 和 $0 \le \mu \le 1$。此外，作为推论可以观察到我们有以下斜率不等式：
+$$
+\frac{\phi(x+h) - \phi(x)}{h} \le \frac{\phi(y) - \phi(x)}{y-x} \le \frac{\phi(y) - \phi(y-h)}{h},
+$$
+只要 $x < y, h > 0$，且 $x+h < y$。
+下面可以证明如下结论：
+(a) $\phi$ 在 $(a, b)$ 上连续。
+(b) $\phi$ 在任何 $(a, b)$ 的真闭子区间 $[a_0, b_0]$ 上满足 1 阶利普希茨条件。因此 $\phi$ 在每个子区间上是绝对连续的。
+(c) $\phi'$ 在至多至多可数个点上存在，且 $\phi' = D_+\phi$ 是一个递增函数，满足
+$$
+\phi(y) - \phi(x) = \int_x^y \phi'(t) dt;
+$$
+(d) 反之，如果在 $(a, b)$ 上 $\psi$ 是任意递增函数，那么 $\phi(x) = \int_c^x \psi(t) dt$ 是 $(a, b)$ 中的一个凸函数（对于 $c \in (a, b)$）。
+
+5. 设 $F$ 在 $[a, b]$ 上连续，对每个 $x \in (a, b)$，$F'(x)$ 存在，且 $F'(x)$ 可积。则 $F$ 是绝对连续的，并且
+$$
+F(b) - F(a) = \int_a^b F'(x) dx;
+$$
+
+> 154 第 3 章 微分与积分
+
+提示：假设对于几乎所有的 $x$，有 $F'(x) \ge 0$。我们想要推出 $F(b) \ge F(a)$。设 $E$ 为满足 $F'(x) < 0$ 的那些 $x$ 的零测集。那么根据习题 25，存在一个递增、绝对连续的函数 $\phi$，使得 $D^+\phi(x) = 1$，当 $x \in E$。对每个 $\varepsilon$，考虑 $F + \varepsilon \phi$，并应用习题 23 中的结果 (a)。
+
+6. **以下关于习题 30 的逆命题刻画了有界变差函数。
+
+假设 $F$ 是 $\mathbb{R}$ 上的有界可测函数。如果 $F$ 满足该习题中条件 (a) 或 (b) 之一，则可以通过在一个零测集上修改 $F$，使其成为 $\mathbb{R}$ 上的有界变差函数。
+
+此外，在 $\mathbb{R}^d$ 上有如下结论。假设 $F$ 是 $\mathbb{R}^d$ 上的有界可测函数。则关于 $F$ 的以下两个条件是等价的：
+
+(a$'$) $\int_{\mathbb{R}^d} |F(x+h) - F(x)| dx \le A|h|$，对所有 $h \in \mathbb{R}^d$。
+
+(b$'$) $\left|\int_{\mathbb{R}^d} F(x) \frac{\partial \phi}{\partial x_j} dx\right| \le A$，对所有 $j = 1, \dots, d$，
+
+对所有具有紧支集的 $\phi \in C^1$ 成立，且满足 $\sup_{x \in \mathbb{R}^d} |\phi(x)| \le 1$。
+
+满足 (a$'$) 或 (b$'$) 之一的函数类，即为有界变差函数类到 $\mathbb{R}^d$ 上的推广。
+
+7. 考虑函数
+$$f_1(x) = \sum_{n=0}^\infty 2^{-n} e^{2\pi i 2^n x}.$$
+
+(a) 证明对每个 $0 < \alpha < 1$，$f_1$ 满足 $|f_1(x) - f_1(y)| \le A |x - y|^\alpha$。
+
+(b) * 然而，$f_1$ 处处不可微，因此不具有有界变差性质。
+
+> 6. 习题 155
+
+8. 设 $\mathcal{R}$ 表示 $\mathbb{R}^2$ 中包含原点且边与坐标轴平行的所有矩形构成的集合。考虑与该族相关的极大算子，即
+$$ f_R^*(x) = \sup_{R \in \mathcal{R}} \frac{1}{m(R)} \int_R |f(x-y)| dy: $$
+(a) 则，映射 $f \mapsto f_R^*$ 不满足弱型不等式
+$$ m(\{x : f_R^*(x) > \alpha\}) \leq \frac{A}{\alpha} \|f\|_{L^1} $$
+对所有 $\alpha > 0$，所有可积函数 $f$，以及某个 $A > 0$ 成立。
+(b) 利用此结论，可以证明存在 $f \in L^1(\mathbb{R}^2)$，使得对 $x \in \mathbb{R}^2$，
+$$ \limsup_{\text{diam}(R) \to 0} \frac{1}{m(R)} \int_R f(x-y) dy = 1 $$
+几乎处处成立。
+这里 $\text{diam}(R) = \sup_{x, y \in R} |x-y|$ 等于该矩形的直径。
+
+提示：对于部分 (a)，设 $B$ 为单位球，并考虑函数 $\phi(x) = \chi_B(x)/m(B)$。对于 $\epsilon > 0$，令 $\phi_\epsilon(x) = \epsilon^{-2} \phi(x/\epsilon)$。则当 $\epsilon \to 0$ 时，
+$$ (\phi_\epsilon)_R^*(x) \to \frac{1}{|x_1 x_2|} $$
+对每个 $(x_1, x_2)$，其中 $x_1 x_2 \neq 0$。如果弱型不等式成立，那么我们将有
+$$ m(\{|x| \leq 1 : |x_1 x_2|^{-1} > \alpha\}) \leq \frac{A}{\alpha}. $$
+这是一个矛盾，因为当 $\alpha \to \infty$ 时，左侧项的数量级为 $(\log \alpha)/\alpha$。
+
+1. 证明 Vitali 覆盖引理的如下变体：如果集合 $E$ 被一族球 $B$ 以 Vitali 意义所覆盖，且 $0 < m^*(E) < \infty$，那么对于每个 $\varepsilon > 0$，存在 $B$ 中互不相交的球族 $\{B_j\}_{j=1}^\infty$ 使得
+$$m^*\left(E \setminus \bigcup_{j=1}^\infty B_j\right) = 0 \quad \text{且} \quad \sum_{j=1}^\infty |B_j| \le (1 + \varepsilon)m^*(E)$$
+（注：原文中 $m^\star(E)<1$ 视为 $m^\star(E) < \infty$ 的 OCR 误读）。
+
+2. 下面的简单一维覆盖引理可用于多种情形。
+假设 $I_1, I_2, \dots, I_N$ 是 $\mathbb{R}$ 中给定的一组有限开区间。则存在两个有限子族 $I'_1, I'_2, \dots, I'_K$，以及 $I''_1, I''_2, \dots, I''_L$，使得每个子族都由两两不相交的区间组成，并且
+$$\bigcup_{j=1}^N I_j = \bigcup_{k=1}^K I'_k \cup \bigcup_{l=1}^L I''_l$$
+注意，与引理 1.2 相反，这里是整个并集都被覆盖，而不仅仅是部分。
+
+> 6. Problems 153
+
+提示：选择 $I_1^0$ 使其左端点尽可能靠左。丢弃所有包含在 $I_1^0$ 中的区间。如果剩余区间与 $I_1^0$ 不相交，再次选择一个最靠左的区间，并称之为 $I_2^0$。否则，选择一个与 $I_1^0$ 相交但向右延伸尽可能远的区间，并将此区间记为 $I_1^{00}$。重复此过程。
+
+3. 高维情形下没有问题 2 的直接类比。然而，贝西科维奇（Besicovitch）覆盖引理提供了完整的覆盖。该引理的一个版本陈述如下：存在一个整数 $N$（仅依赖于维数 $d$），具有如下性质。假设 $E$ 是 $\mathbb{R}^d$ 中的任意有界集，且被一族球（强）覆盖，即对于每个 $x \in E$，存在一个 $B \in \mathcal{B}$ 其中心为 $x$。那么，存在原集合族 $\mathcal{B}$ 的 $N$ 个子族 $\mathcal{B}_1, \mathcal{B}_2, \dots, \mathcal{B}_N$，使得每个 $\mathcal{B}_j$ 都是互不相交的球的集合，此外，$E \subseteq \bigcup_{B \in \mathcal{B}'} B$，其中 $\mathcal{B}' = \mathcal{B}_1 \cup \mathcal{B}_2 \cup \dots \cup \mathcal{B}_N$。
+
+4. 定义在区间 $(a, b)$ 上的实值函数 $\phi$ 被称为凸函数，如果位于其图像上方的区域 $\{(x, y) \in \mathbb{R}^2 : y > \phi(x), a \le x \le b\}$ 是一个凸集（如第 1 章第 5*节所定义）。等价地，$\phi$ 是凸的，如果
+$$
+\phi(\mu x_1 + (1-\mu)x_2) \le \mu \phi(x_1) + (1-\mu)\phi(x_2)
+$$
+对于任意 $x_1, x_2 \in (a, b)$ 和 $0 \le \mu \le 1$。此外，作为推论可以观察到我们有以下斜率不等式：
+$$
+\frac{\phi(x+h) - \phi(x)}{h} \le \frac{\phi(y) - \phi(x)}{y-x} \le \frac{\phi(y) - \phi(y-h)}{h},
+$$
+只要 $x < y, h > 0$，且 $x+h < y$。
+下面可以证明如下结论：
+(a) $\phi$ 在 $(a, b)$ 上连续。
+(b) $\phi$ 在任何 $(a, b)$ 的真闭子区间 $[a_0, b_0]$ 上满足 1 阶利普希茨条件。因此 $\phi$ 在每个子区间上是绝对连续的。
+(c) $\phi'$ 在至多至多可数个点上存在，且 $\phi' = D_+\phi$ 是一个递增函数，满足
+$$
+\phi(y) - \phi(x) = \int_x^y \phi'(t) dt;
+$$
+(d) 反之，如果在 $(a, b)$ 上 $\psi$ 是任意递增函数，那么 $\phi(x) = \int_c^x \psi(t) dt$ 是 $(a, b)$ 中的一个凸函数（对于 $c \in (a, b)$）。
+
+5. 设 $F$ 在 $[a, b]$ 上连续，对每个 $x \in (a, b)$，$F'(x)$ 存在，且 $F'(x)$ 可积。则 $F$ 是绝对连续的，并且
+$$
+F(b) - F(a) = \int_a^b F'(x) dx;
+$$
+
+> 154 第 3 章 微分与积分
+
+提示：假设对于几乎所有的 $x$，有 $F'(x) \ge 0$。我们想要推出 $F(b) \ge F(a)$。设 $E$ 为满足 $F'(x) < 0$ 的那些 $x$ 的零测集。那么根据习题 25，存在一个递增、绝对连续的函数 $\phi$，使得 $D^+\phi(x) = 1$，当 $x \in E$。对每个 $\varepsilon$，考虑 $F + \varepsilon \phi$，并应用习题 23 中的结果 (a)。
+
+6. **以下关于习题 30 的逆命题刻画了有界变差函数。
+
+假设 $F$ 是 $\mathbb{R}$ 上的有界可测函数。如果 $F$ 满足该习题中条件 (a) 或 (b) 之一，则可以通过在一个零测集上修改 $F$，使其成为 $\mathbb{R}$ 上的有界变差函数。
+
+此外，在 $\mathbb{R}^d$ 上有如下结论。假设 $F$ 是 $\mathbb{R}^d$ 上的有界可测函数。则关于 $F$ 的以下两个条件是等价的：
+
+(a$'$) $\int_{\mathbb{R}^d} |F(x+h) - F(x)| dx \le A|h|$，对所有 $h \in \mathbb{R}^d$。
+
+(b$'$) $\left|\int_{\mathbb{R}^d} F(x) \frac{\partial \phi}{\partial x_j} dx\right| \le A$，对所有 $j = 1, \dots, d$，
+
+对所有具有紧支集的 $\phi \in C^1$ 成立，且满足 $\sup_{x \in \mathbb{R}^d} |\phi(x)| \le 1$。
+
+满足 (a$'$) 或 (b$'$) 之一的函数类，即为有界变差函数类到 $\mathbb{R}^d$ 上的推广。
+
+7. 考虑函数
+$$f_1(x) = \sum_{n=0}^\infty 2^{-n} e^{2\pi i 2^n x}.$$
+
+(a) 证明对每个 $0 < \alpha < 1$，$f_1$ 满足 $|f_1(x) - f_1(y)| \le A |x - y|^\alpha$。
+
+(b) * 然而，$f_1$ 处处不可微，因此不具有有界变差性质。
+
+> 6. 习题 155
+
+8. 设 $\mathcal{R}$ 表示 $\mathbb{R}^2$ 中包含原点且边与坐标轴平行的所有矩形构成的集合。考虑与该族相关的极大算子，即
+$$ f_R^*(x) = \sup_{R \in \mathcal{R}} \frac{1}{m(R)} \int_R |f(x-y)| dy: $$
+(a) 则，映射 $f \mapsto f_R^*$ 不满足弱型不等式
+$$ m(\{x : f_R^*(x) > \alpha\}) \leq \frac{A}{\alpha} \|f\|_{L^1} $$
+对所有 $\alpha > 0$，所有可积函数 $f$，以及某个 $A > 0$ 成立。
+(b) 利用此结论，可以证明存在 $f \in L^1(\mathbb{R}^2)$，使得对 $x \in \mathbb{R}^2$，
+$$ \limsup_{\text{diam}(R) \to 0} \frac{1}{m(R)} \int_R f(x-y) dy = 1 $$
+几乎处处成立。
+这里 $\text{diam}(R) = \sup_{x, y \in R} |x-y|$ 等于该矩形的直径。
+
+提示：对于部分 (a)，设 $B$ 为单位球，并考虑函数 $\phi(x) = \chi_B(x)/m(B)$。对于 $\epsilon > 0$，令 $\phi_\epsilon(x) = \epsilon^{-2} \phi(x/\epsilon)$。则当 $\epsilon \to 0$ 时，
+$$ (\phi_\epsilon)_R^*(x) \to \frac{1}{|x_1 x_2|} $$
+对每个 $(x_1, x_2)$，其中 $x_1 x_2 \neq 0$。如果弱型不等式成立，那么我们将有
+$$ m(\{|x| \leq 1 : |x_1 x_2|^{-1} > \alpha\}) \leq \frac{A}{\alpha}. $$
+这是一个矛盾，因为当 $\alpha \to \infty$ 时，左侧项的数量级为 $(\log \alpha)/\alpha$。

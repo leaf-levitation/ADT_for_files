@@ -1,0 +1,76 @@
+
+我们现在转向由卷积给出的函数的平均值，$^2$这可以写成
+$$
+(f * K_\epsilon)(x) = \int_{\mathbb{R}^d} f(x-y) K_\epsilon(y) dy
+$$
+这里 $f$ 是一般可积函数，我们将它固定，而 $K_\epsilon$ 则在一组特定的函数范围内变化，称为核。这类表达式在许多问题中出现（例如在前一章的傅里叶反演定理中），并且在《第一卷》中已经讨论过。在我们最初的研究中，如果这些函数是可积的，并且对于 $\epsilon > 0$ 满足以下条件，我们就称这些函数为“优良核”。
+
+$^2$ 前一章的练习 21 描述了卷积的一些基本性质。
+
+> 2. 良核与单位逼近 109
+
+(i) $\int_{\mathbb{R}^d} K_\epsilon(x) \, dx = 1.$
+(ii) $\int_{\mathbb{R}^d} |K_\epsilon(x)| \, dx \le A.$
+(iii) 对于每个 $\epsilon > 0$，
+$\int_{|x| \ge \epsilon} |K_\epsilon(x)| \, dx \to 0 \text{ 当 } \epsilon \to 0.$
+这里 $A$ 是一个与 $\epsilon$ 无关的常数。
+
+这些核的主要用途在于：只要 $f$ 是有界的，那么在 $f$ 的每一个连续点处，$(f * K_\epsilon)(x)$ 当 $\epsilon \to 0$ 时趋于 $f(x)$。为了得到一个类似的结论，该结论也适用于 $f$ 的勒贝格集（Lebesgue set）上的所有点，我们需要稍微加强我们对核 $K_\epsilon$ 的假设。为了反映这种情况，我们采用不同的术语，并将由此得到的较窄类的核称为**单位逼近**（approximations to the identity）。这里的假设依然是 $K_\epsilon$ 可积且满足条件 (i)，但取代 (ii) 和 (iii) 的是，我们假设：
+(ii') 对所有 $\epsilon > 0$，$|K_\epsilon(x)| \le A \epsilon^{-d}$。
+(iii') 对所有 $\epsilon > 0$ 和 $x \in \mathbb{R}^d$，$|K_\epsilon(x)| \le A \epsilon / |x|^{d+1}$。3
+
+我们观察到这些要求更强，并隐含了良核定义中的条件。事实上，我们先证明 (ii)。为此，我们使用第 2 章推论 1.10 的第二个例证，它给出了
+$$ \int_{|x| \ge \delta} \frac{dx}{|x|^{d+1}} \le \frac{C}{\delta^d} \tag{5} $$
+其中 $C > 0$ 且对所有的 $\delta > 0$ 成立。
+然后，利用估计式 (ii') 和 (iii') 分别针对 $|x| < \epsilon$ 和 $|x| \ge \epsilon$ 的情形，可得
+$$ \begin{aligned} \int_{\mathbb{R}^d} |K_\epsilon(x)| \, dx &= \int_{|x| < \epsilon} |K_\epsilon(x)| \, dx + \int_{|x| \ge \epsilon} |K_\epsilon(x)| \, dx \\ &\le A \int_{|x| < \epsilon} dx \, \epsilon^{-d} + A \epsilon \int_{|x| \ge \epsilon} \frac{1}{|x|^{d+1}} \, dx \\ &\le A' + A'' < \infty \end{aligned} $$
+3 有时条件 (iii') 被替换为要求存在固定的 $\eta > 0$ 使得 $|K_\epsilon(x)| \le A \epsilon^\eta / |x|^{d+\eta}$。然而在大多数情况下，特例 $\eta = 1$ 已经足够。
+
+
+> 110 第三章 微分与积分
+
+最后，好的核的最后一个条件也得到验证，因为再次应用 (5) 式可得
+$$ \int_{|x| \geq \varepsilon} |K_\varepsilon(x)| \,dx \leq C_\varepsilon \int_{|x| \geq \varepsilon} \frac{dx}{|x|^{d+1}} \leq C'_\varepsilon \varepsilon; $$
+且当 $\varepsilon \to 0$ 时，上述最后一项表达式趋于 0。
+
+“单位元逼近”（approximation to the identity）这一术语源于这样一个事实：当 $\varepsilon \to 0$ 时，映射 $f \mapsto f * K_\varepsilon$ 在以各种意义上确实收敛于恒等映射 $f \mapsto f$，如下文所示。它也与以下启发式直观相联系。图 2 描绘了典型的单位元逼近：对于每个 $\varepsilon > 0$，核的支撑集为 $|x| < \varepsilon$，高度为 $1/(2\varepsilon)$。当 $\varepsilon$ 趋于 0 时，这一族核收敛于所谓原点处的单位质量，即狄拉克δ“函数”。后者启发式地定义为
+$$ D(x) = \begin{cases} 1, & \text{如果 } x=0 \\ 0, & \text{如果 } x \neq 0 \end{cases} \quad \text{且} \quad \int D(x)\,dx = 1: $$
+
+
+我们现在转向由卷积给出的函数的平均值，$^2$这可以写成
+$$
+(f * K_\epsilon)(x) = \int_{\mathbb{R}^d} f(x-y) K_\epsilon(y) dy
+$$
+这里 $f$ 是一般可积函数，我们将它固定，而 $K_\epsilon$ 则在一组特定的函数范围内变化，称为核。这类表达式在许多问题中出现（例如在前一章的傅里叶反演定理中），并且在《第一卷》中已经讨论过。在我们最初的研究中，如果这些函数是可积的，并且对于 $\epsilon > 0$ 满足以下条件，我们就称这些函数为“优良核”。
+
+$^2$ 前一章的练习 21 描述了卷积的一些基本性质。
+
+> 2. 良核与单位逼近 109
+
+(i) $\int_{\mathbb{R}^d} K_\epsilon(x) \, dx = 1.$
+(ii) $\int_{\mathbb{R}^d} |K_\epsilon(x)| \, dx \le A.$
+(iii) 对于每个 $\epsilon > 0$，
+$\int_{|x| \ge \epsilon} |K_\epsilon(x)| \, dx \to 0 \text{ 当 } \epsilon \to 0.$
+这里 $A$ 是一个与 $\epsilon$ 无关的常数。
+
+这些核的主要用途在于：只要 $f$ 是有界的，那么在 $f$ 的每一个连续点处，$(f * K_\epsilon)(x)$ 当 $\epsilon \to 0$ 时趋于 $f(x)$。为了得到一个类似的结论，该结论也适用于 $f$ 的勒贝格集（Lebesgue set）上的所有点，我们需要稍微加强我们对核 $K_\epsilon$ 的假设。为了反映这种情况，我们采用不同的术语，并将由此得到的较窄类的核称为**单位逼近**（approximations to the identity）。这里的假设依然是 $K_\epsilon$ 可积且满足条件 (i)，但取代 (ii) 和 (iii) 的是，我们假设：
+(ii') 对所有 $\epsilon > 0$，$|K_\epsilon(x)| \le A \epsilon^{-d}$。
+(iii') 对所有 $\epsilon > 0$ 和 $x \in \mathbb{R}^d$，$|K_\epsilon(x)| \le A \epsilon / |x|^{d+1}$。3
+
+我们观察到这些要求更强，并隐含了良核定义中的条件。事实上，我们先证明 (ii)。为此，我们使用第 2 章推论 1.10 的第二个例证，它给出了
+$$ \int_{|x| \ge \delta} \frac{dx}{|x|^{d+1}} \le \frac{C}{\delta^d} \tag{5} $$
+其中 $C > 0$ 且对所有的 $\delta > 0$ 成立。
+然后，利用估计式 (ii') 和 (iii') 分别针对 $|x| < \epsilon$ 和 $|x| \ge \epsilon$ 的情形，可得
+$$ \begin{aligned} \int_{\mathbb{R}^d} |K_\epsilon(x)| \, dx &= \int_{|x| < \epsilon} |K_\epsilon(x)| \, dx + \int_{|x| \ge \epsilon} |K_\epsilon(x)| \, dx \\ &\le A \int_{|x| < \epsilon} dx \, \epsilon^{-d} + A \epsilon \int_{|x| \ge \epsilon} \frac{1}{|x|^{d+1}} \, dx \\ &\le A' + A'' < \infty \end{aligned} $$
+3 有时条件 (iii') 被替换为要求存在固定的 $\eta > 0$ 使得 $|K_\epsilon(x)| \le A \epsilon^\eta / |x|^{d+\eta}$。然而在大多数情况下，特例 $\eta = 1$ 已经足够。
+
+
+> 110 第三章 微分与积分
+
+最后，好的核的最后一个条件也得到验证，因为再次应用 (5) 式可得
+$$ \int_{|x| \geq \varepsilon} |K_\varepsilon(x)| \,dx \leq C_\varepsilon \int_{|x| \geq \varepsilon} \frac{dx}{|x|^{d+1}} \leq C'_\varepsilon \varepsilon; $$
+且当 $\varepsilon \to 0$ 时，上述最后一项表达式趋于 0。
+
+“单位元逼近”（approximation to the identity）这一术语源于这样一个事实：当 $\varepsilon \to 0$ 时，映射 $f \mapsto f * K_\varepsilon$ 在以各种意义上确实收敛于恒等映射 $f \mapsto f$，如下文所示。它也与以下启发式直观相联系。图 2 描绘了典型的单位元逼近：对于每个 $\varepsilon > 0$，核的支撑集为 $|x| < \varepsilon$，高度为 $1/(2\varepsilon)$。当 $\varepsilon$ 趋于 0 时，这一族核收敛于所谓原点处的单位质量，即狄拉克δ“函数”。后者启发式地定义为
+$$ D(x) = \begin{cases} 1, & \text{如果 } x=0 \\ 0, & \text{如果 } x \neq 0 \end{cases} \quad \text{且} \quad \int D(x)\,dx = 1: $$
+

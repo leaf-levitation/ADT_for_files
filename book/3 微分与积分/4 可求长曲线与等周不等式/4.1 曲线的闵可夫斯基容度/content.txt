@@ -1,0 +1,30 @@
+
+这段内容本身具有独立的价值，尤其与我们目前的情况相关。这是因为曲线的可求长性等价于拥有（有限的）Minkowski 测度，而该量即为曲线的长度。
+
+我们首先通过几个定义来开始对这些事项的讨论。由 $z(t) = (x(t), y(t))$，$a \leq t \leq b$ 参数化的曲线，如果映射 $t \mapsto z(t)$ 在 $t \in [a, b]$ 上是单射，则称为简单曲线。如果映射 $t \mapsto z(t)$ 在 $t \in [a, b)$ 上是单射，且 $z(a) = z(b)$，则称为闭简单曲线。更一般地，如果映射在 $[a, b]$ 中除去有限个点后的补集上是单射，则该曲线为准简单曲线。
+
+为方便起见，我们将用 $\Gamma$ 表示曲线 $z(t)$ 当 $t$ 在 $[a, b]$ 变化时追踪出的点集，即 $\Gamma = \{z(t) : a \leq t \leq b\}$。对于任意紧集 $K \subset \mathbb{R}^2$（以下取 $K=\Gamma$），我们用 $K_\varepsilon$ 记为由所有到 $K$ 的距离（严格）小于 $\varepsilon$ 的点组成的开集，
+
+$$K_\varepsilon = \{x \in \mathbb{R}^2 : d(x, K) < \varepsilon\}:$$
+
+> 138 第三章 微分与积分
+
+随后我们称集合 $K$ 具有 Minkowski 测度 $^7$，如果极限
+$$ \lim_{\epsilon \to 0} \frac{m(K_\epsilon)}{2\epsilon} $$
+存在。当此极限存在时，我们用 $M(K)$ 表示它。
+
+
+这段内容本身具有独立的价值，尤其与我们目前的情况相关。这是因为曲线的可求长性等价于拥有（有限的）Minkowski 测度，而该量即为曲线的长度。
+
+我们首先通过几个定义来开始对这些事项的讨论。由 $z(t) = (x(t), y(t))$，$a \leq t \leq b$ 参数化的曲线，如果映射 $t \mapsto z(t)$ 在 $t \in [a, b]$ 上是单射，则称为简单曲线。如果映射 $t \mapsto z(t)$ 在 $t \in [a, b)$ 上是单射，且 $z(a) = z(b)$，则称为闭简单曲线。更一般地，如果映射在 $[a, b]$ 中除去有限个点后的补集上是单射，则该曲线为准简单曲线。
+
+为方便起见，我们将用 $\Gamma$ 表示曲线 $z(t)$ 当 $t$ 在 $[a, b]$ 变化时追踪出的点集，即 $\Gamma = \{z(t) : a \leq t \leq b\}$。对于任意紧集 $K \subset \mathbb{R}^2$（以下取 $K=\Gamma$），我们用 $K_\varepsilon$ 记为由所有到 $K$ 的距离（严格）小于 $\varepsilon$ 的点组成的开集，
+
+$$K_\varepsilon = \{x \in \mathbb{R}^2 : d(x, K) < \varepsilon\}:$$
+
+> 138 第三章 微分与积分
+
+随后我们称集合 $K$ 具有 Minkowski 测度 $^7$，如果极限
+$$ \lim_{\epsilon \to 0} \frac{m(K_\epsilon)}{2\epsilon} $$
+存在。当此极限存在时，我们用 $M(K)$ 表示它。
+

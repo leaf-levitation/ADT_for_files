@@ -1,0 +1,392 @@
+
+1. 假设 $\phi$ 是 $\mathbb{R}^d$ 上的可积函数，且 $\int_{\mathbb{R}^d} \phi(x) dx = 1$。设 $K_\epsilon(x) = \epsilon^{-d}\phi(x/\epsilon), \epsilon > 0$。
+(a) 证明 $\{K_\epsilon\}_{\epsilon > 0}$ 是好核族。
+(b) 此外，假设 $\phi$ 是有界的且在某个有界集合上支撑。验证 $\{K_\epsilon\}_{\epsilon > 0}$ 是一个单位逼近。
+(c) 说明定理 2.3（$L^1$ 范数下的收敛性）同样适用于好核。
+
+2. 假设 $\{K_\epsilon\}_\epsilon$ 是一个满足以下条件的核族：
+(i) $|K_\epsilon(x)| \le A\epsilon^{-d}$ 对所有 $\epsilon > 0$ 成立。
+(ii) $|K_\epsilon(x)| \le A\epsilon/|x|^{d+1}$ 对所有 $\epsilon > 0$ 成立。
+(iii) $\int_{-\infty}^{\infty} K_\epsilon(x) dx = 0$ 对所有 $\epsilon > 0$ 成立。
+因此 $K_\epsilon$ 满足单位逼近的条件 (i) 和 (ii)，但其平均值是 0 而不是 1。证明如果 $f$ 在 $\mathbb{R}^d$ 上可积，则 $(f * K_\epsilon)(x) \to 0$ 对几乎处处的 $x$，当 $\epsilon \to 0$。
+
+3. 假设 0 是集合 $E \subset \mathbb{R}$ 的（勒贝格）密度点。证明对于下面的每个独立条件，都存在一个无穷点序列 $x_n \in E$，满足 $x_n \neq 0$，且当 $n \to \infty$ 时 $x_n \to 0$。
+(a) 该序列还对所有 $n$ 满足 $-x_n \in E$。
+(b) 此外，对所有 $n$，$2x_n$ 属于 $E$。
+
+> 146 第 3 章 微分与积分
+推广。
+
+**4.** 证明：若 $f$ 在 $\mathbb{R}^d$ 上可积，且不恒为零，则存在 $c > 0$，使得对所有 $|x| \ge 1$ 有
+$$ f^*(x) \ge \frac{c}{|x|^d}. $$
+由此推论 $f^*$ 在 $\mathbb{R}^d$ 上不可积。然后说明，当 $\int |f| = 1$ 时，对于所有 $\alpha > 0$ 均成立的弱型估计
+$$ m(\{x : f^*(x) > \alpha\}) \le \frac{c}{\alpha} $$
+在最下面的意义上是最优的：如果 $f$ 支撑在单位球内且 $\int |f| = 1$，则存在 $c' > 0$ 使得对所有充分小的 $\alpha$ 有
+$$ m(\{x : f^*(x) > \alpha\}) \ge \frac{c'}{\alpha}. $$
+提示：第一部分利用事实：存在某个球 $B$ 使得 $\int_B |f| > 0$。
+
+**5.** 考虑定义在 $\mathbb{R}^d$ 上的函数
+$$ f(x) = \begin{cases} \frac{1}{|x|(\log(1/|x|))^2}, & \text{若 } |x| \le 1/2 \\ 0, & \text{其他情况} \end{cases} $$
+(a) 验证 $f$ 是可积的。
+(b) 建立不等式
+$$ f^*(x) \ge \frac{c}{|x|\log(1/|x|)}, \quad \text{对于某个 } c > 0 \text{ 和所有 } |x| \le 1/2, $$
+从而得出结论：极大函数 $f^*$ 并非局部可积。
+
+**6.** 在一维情形下，关于极大函数的基本不等式 (1) 有一个版本是以恒等式的形式出现的。我们定义“单侧”极大函数
+$$ f^*_+(x) = \sup_{h>0} \frac{1}{h} \int_x^{x+h} |f(y)| \, dy. $$
+若 $E^+_\alpha = \{x \in \mathbb{R} : f^*_+(x) > \alpha\}$，则
+$$ m(E^+_\alpha) = \frac{1}{\alpha} \int_{E^+_\alpha} |f(y)| \, dy. $$
+提示：引理 3.5 应用于 $F(x) = \int_0^x |f(y)| \, dy - \alpha x$。则 $E^+_\alpha$ 是不相交区间 $(a_k, b_k)$ 的并集，满足 $\int_{a_k}^{b_k} |f(y)| \, dy = \alpha(b_k - a_k)$。
+
+> 5. Exercises 147
+
+7. 利用推论 1.5 证明：若 $[0,1]$ 的可测子集 $E$ 满足存在某个 $\alpha > 0$，使得对于 $[0,1]$ 中的所有区间 $I$ 都有 $m(E \cap I) \ge \alpha m(I)$，则 $E$ 的测度为 1。另参见第 1 章习题 28。
+
+8. 假设 $A$ 是 $\mathbb{R}$ 中的勒贝格可测集且 $m(A) > 0$。是否存在序列 $(s_n)_{n=1}^\infty$ 使得 $\bigcup_{n=1}^\infty (A+s_n)$ 在 $\mathbb{R}$ 中的补集的测度为零？
+提示：对于每个 $\varepsilon > 0$，找到一个长度为 $\ell_\varepsilon$ 的区间 $I_\varepsilon$，使得 $m(A \cap I_\varepsilon) \ge (1-\varepsilon)m(I_\varepsilon)$。考虑 $\bigcup_{k} (A+t_k)$，其中 $t_k = k\ell_\varepsilon$。然后改变 $\varepsilon$。
+
+9. 设 $F$ 为 $\mathbb{R}$ 中的闭集，记 $\delta(x)$ 为 $x$ 到 $F$ 的距离，即 $\delta(x) = d(x, F) = \inf \{|x-y| : y \in F\}$。显然，只要 $x \in F$，就有 $\delta(x+y) \le |y|$。证明更精细的估计式 $\delta(x+y) = o(|y|)$ 对几乎所有的 $x \in F$ 成立，即当 $x \in F$ 时对几乎所有的 $x$，$\delta(x+y)/|y| \to 0$。
+提示：假设 $x$ 是 $F$ 的一个密度点。
+
+10. 构造一个定义在 $\mathbb{R}$ 上的递增函数，使其不连续点的集合恰好为 $\mathbb{Q}$。
+
+11. 如果 $a, b > 0$，令
+$$f(x) = \begin{cases} x^a \sin(x^{-b}) & \text{若 } 0 < x \le 1, \\ 0 & \text{若 } x = 0. \end{cases}$$
+证明 $f$ 在 $[0,1]$ 上是有界变差的，当且仅当 $a > b$。然后，取 $a = b$，对每个 $0 < \alpha < 1$，构造一个满足指数为 $\alpha$ 的霍尔德（Lipschitz）条件的函数，即满足
+$$|f(x) - f(y)| \le A|x-y|^\alpha$$
+但不是有界变差的函数。
+提示：注意如果 $h > 0$，差值 $|f(x+h)-f(x)|$ 可以估计为 $C(x+h)^a$，或者根据均值定理由 $C_0 h/x$ 估计。然后考虑两种情况，即 $x^{a+1} \ge h$ 或 $x^{a+1} < h$。$\alpha$ 和 $a$ 之间有什么关系？
+
+12. 考虑函数 $F(x) = x^2 \sin(1/x^2), x \ne 0$，并定义 $F(0) = 0$。证明 $F'(x)$ 对每个 $x$ 都存在，但 $F'$ 在 $[-1,1]$ 上不可积。
+
+13. 直接从定义证明康托尔 - 勒贝格函数（Cantor-Lebesgue function）不是绝对连续的。
+
+14. 在讨论函数的可微性时出现了以下可测性问题。
+
+> 148 第三章 微分与积分
+
+(a) 假设 $F$ 在 $[a, b]$ 上连续。证明
+$$D^+F(x) = \limsup_{h \to 0, h > 0} \frac{F(x+h)-F(x)}{h}$$
+是可测的。
+
+(b) 假设 $J(x) = \sum_{n=1}^\infty \alpha_n j_n(x)$ 如本章第 3.3 节所述的跳跃函数。证明
+$$\limsup_{h \to 0} \frac{J(x+h)-J(x)}{h}$$
+是可测的。
+
+提示：对于 (a)，$F$ 的连续性允许人们将对 $h$ 取上极限的限制缩小到可数多个值。对于 (b)，给定 $k, m$，设 $F_{N,k;m} = \sup_{1/k < |h| < 1/m} \left|\frac{J_N(x+h)-J_N(x)}{h}\right|$，其中 $J_N(x) = \sum_{n=1}^N \alpha_n j_n(x)$。注意每个 $F_{N,k;m}$ 都是可测的。然后依次令 $N \to \infty, k \to \infty$，最后 $m \to \infty$。
+
+15. 假设 $F$ 是有界变差且连续的。证明存在 $F = F_1 - F_2$，其中 $F_1$ 和 $F_2$ 均为单调且连续的。
+
+16. 证明如果 $F$ 在 $[a, b]$ 上是有界变差的，则：
+(a) $\int_a^b |F'(x)| dx \le T_F(a, b)$。
+(b) $\int_a^b |F'(x)| dx = T_F(a, b)$ 当且仅当 $F$ 是绝对连续的。
+作为 (b) 的结果，参数化曲线 $z$ 的可求长曲线的公式 $L = \int_a^b |z'(t)| dt$ 成立的当且仅当 $z$ 是绝对连续的。
+
+17. 证明如果 $\{K_\epsilon\}_{\epsilon > 0}$ 是一个逼近恒同元的族，则对某个常数 $c > 0$ 及所有可积函数 $f$，有
+$$\sup_{\epsilon > 0} |(f * K_\epsilon)(x)| \le c f^*(x)$$。
+
+18. 验证第 1 章习题 2 中给出的 Cantor-Lebesgue 函数的定义与本章节 3.1 节给出的定义的相容性。
+
+19. 证明如果 $f: \mathbb{R} \to \mathbb{R}$ 是绝对连续的，则
+(a) $f$ 将零测集映射为零测集。
+(b) $f$ 将可测集映射为可测集。
+
+> 5. 练习 149
+
+20. 本习题讨论定义在 $[a, b]$ 上绝对连续且递增的函数 $F$。令 $A=F(a)$，$B=F(b)$。
+
+(a) 存在这样的 $F$，它除了是绝对连续递增之外还是严格递增的，但其在某个正测度集上满足 $F'(x) = 0$。
+
+(b) (a) 中的 $F$ 可以选取为使得存在可测子集 $E \subseteq [A, B]$，满足 $m(E) = 0$，以至于 $F^{-1}(E)$ 不可测。
+
+(c) 然而，请证明：对于任意递增绝对连续函数 $F$，以及 $[A, B]$ 的可测子集 $E$，集合 $F^{-1}(E) \cap \{x \mid F'(x) > 0\}$ 是可测的。
+提示：(a) 令 $F(x) = \int_a^x \chi_K(t) dt$，其中 $K$ 是一个正测度的类康托尔集 $C$ 的补集。对于 (b)，注意 $F(C)$ 是零测集。最后，对于 (c)，首先证明对于任何开集 $O$，有 $m(O) = \int_{F^{-1}(O)} F'(x) dx$。
+
+21. 设 $F$ 在 $[a, b]$ 上绝对连续且递增，且有 $F(a) = A$ 和 $F(b) = B$。假设 $f$ 是 $[A, B]$ 上的任意可测函数。
+
+(a) 证明 $f(F(x))F'(x)$ 在 $[a, b]$ 上是可测的。注意：根据 20(b)，$f(F(x))$ 不一定可测。
+
+(b) 证明换元公式：如果 $f$ 在 $[A, B]$ 上可积，那么 $f(F(x))F'(x)$ 也是可积的，并且
+$$
+\int_A^B f(y) dy = \int_a^b f(F(x)) F'(x) dx
+$$
+提示：从 20(c) 中使用的恒等式 $m(O) = \int_{F^{-1}(O)} F'(x) dx$ 开始。
+
+22. 假设 $F$ 和 $G$ 都在 $[a, b]$ 上绝对连续。证明它们的乘积 $FG$ 也是绝对连续的。这有以下推论。
+
+(a) 只要 $F$ 和 $G$ 在 $[a, b]$ 上绝对连续，就有
+$$
+\int_a^b F'(x) G(x) dx = -\int_a^b F(x) G'(x) dx + [F(x)G(x)]_a^b
+$$
+
+(b) 设 $F$ 在 $[-\pi, \pi]$ 上绝对连续且满足 $F(\pi) = F(-\pi)$。证明若
+$$
+a_n = \frac{1}{2\pi} \int_{-\pi}^\pi F(x) e^{-inx} dx
+$$
+使得 $F(x) \sim \sum_{n=-\infty}^\infty a_n e^{inx}$，那么
+$$
+F'(x) \sim \sum_{n=-\infty}^\infty i n a_n e^{inx}
+$$
+
+> 150 第 3 章 微分和积分
+
+(c) 如果 $F(\xi) \neq F(\eta)$ 会发生什么？提示：考虑 $F(x) = x$。
+
+23. 设 $F$ 在 $[a, b]$ 上连续。证明以下结论。
+(a) 假设对于每一个 $x \in [a, b]$，都有 $(D_+ F)(x) \ge 0$。那么 $F$ 在 $[a, b]$ 上是单调递增的。
+(b) 如果对于每一个 $x \in (a, b)$，$F'(x)$ 存在且 $|F'(x)| \le M$，则 $|F(x) - F(y)| \le M|x - y|$，且 $F$ 是绝对连续的。
+
+提示：对于 (a)，只需证明 $F(b) - F(a) \ge 0$。假设否则。于是令 $G_\epsilon(x) = F(x) - F(a) + \epsilon(x - a)$，对于足够小的 $\epsilon > 0$，我们有 $G_\epsilon(a) = 0$，但 $G_\epsilon(b) < 0$。现在令 $x_0 \in [a, b)$ 为满足 $G_\epsilon(x_0) \ge 0$ 的最大的 $x_0$ 值。然而，$(D_+ G_\epsilon)(x_0) > 0$。
+
+24. 假设 $F$ 是 $[a, b]$ 上的增函数。
+(a) 证明我们可以写成
+$$ F = F_A + F_C + F_J; $$
+其中 $F_A, F_C$ 和 $F_J$ 每个函数都是增函数，并且：
+(i) $F_A$ 是绝对连续的。
+(ii) $F_C$ 是连续的，但是对于几乎处处（a.e.）的 $x$，$F_C'(x) = 0$。
+(iii) $F_J$ 是一个跳跃函数。
+(b) 此外，每个分量 $F_A, F_C, F_J$ 在附加常数的意义下是唯一确定的。
+
+上述即为 $F$ 的勒贝格分解。对于任何有界变差的 $F$，都存在相应的分解。
+
+25. 下述说明了在微分定理 1.4, 3.4 和 3.11 中允许具有零测集的一般例外集的必要性。设 $E$ 为 $\mathbb{R}^d$ 中任意零测集。证明：
+(a) 存在一个非负可积函数 $f \in L^1(\mathbb{R}^d)$，使得对于每个 $x \in E$，
+$$ \liminf_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B f(y) dy = 1。 $$
+(b) 当 $d = 1$ 时，这可以重述如下。存在一个递增的绝对连续函数 $F$，使得
+$$ D_+(F)(x) = D_-(F)(x) = 1; \text{对于每个 } x \in E。 $$
+
+> 5. Exercises 151
+
+提示：找到开集 $O_n \supseteq E$，满足 $m(O_n) < 2^{-n}$，并令 $f(x) = \sum_{n=1}^\infty \chi_{O_n}(x)$。
+
+26. 任意集合 $E$ 的外测度 $m^*(E)$ 的另一种定义方式（如第 1 章第 2 节所述），是将 $E$ 被方体的覆盖替换为被球的覆盖。即，若我们定义 $m_B^*(E)$ 为 $\inf \sum_{j=1}^\infty m(B_j)$，其中下确界取遍所有由开球覆盖 $E \subseteq \bigcup_{j=1}^\infty B_j$ 的情况。那么 $m^*(E) = m_B^*(E)$。（注意：该结果导出勒贝格测度在旋转下不变性的一个替代证明。）
+
+显然 $m^*(E) \le m_B^*(E)$。请通过展示以下内容来证明反向不等式：对于任意 $\epsilon > 0$，存在一族球 $\{B_j\}$ 使得 $E \subseteq \bigcup_j B_j$ 且 $\sum_j m(B_j) \le m^*(E) + \epsilon$。还需注意到，对于任意预先指定的 $\delta$，我们可以选择直径小于 $\delta$ 的球。
+
+提示：首先假设 $E$ 是可测的，选开区间 $O \supseteq E$ 使得 $m(O \setminus E) < \epsilon_0$。接下来，利用引理 3.10，找到球 $B_1, \dots, B_N$ 使得 $\sum_{j=1}^N m(B_j) \le m(E) + 2\epsilon_0$ 且 $m(E \setminus \bigcup_{j=1}^N B_j) \le 3\epsilon_0$。最后，用一组立方体的并覆盖 $E \setminus \bigcup_{j=1}^N B_j$，其测度之和 $\le 4\epsilon_0$，并将这些立方体替换为包含它们的球。对于一般的 $E$，先从应用上述当 $E$ 是立方体时开始。
+
+27. 一条可求长曲线在曲线的几乎所有点处都有切线。使这个陈述精确化。
+
+28. $\mathbb{R}^d$ 中的一条曲线是一个从区间 $[a, b]$ 到 $\mathbb{R}^d$ 的连续映射 $t \mapsto z(t)$。
+(a) 陈述并证明关于曲线可求长性及其长度的定理 3.1, 4.1 和 4.3 的类似命题。
+(b) 将 $\mathbb{R}^d$ 中紧集 $K$ 的（一维）闵可夫斯基含量 $M(K)$ 定义为极限（如果存在）：
+$$ \frac{m(K_\delta)}{m_{d-1}(B(\delta))} \quad (\text{当 } \delta \to 0) $$
+其中 $m_{d-1}(B(\delta))$ 是由 $B(\delta) = \{x \in \mathbb{R}^{d-1} : |x| < \delta\}$ 定义的球在 $\mathbb{R}^{d-1}$ 中的测度。陈述并证明关于 $\mathbb{R}^d$ 中曲线的命题 4.5 和 4.7 的类似命题。
+
+29. 设 $\gamma = \{z(t) : a \le t \le b\}$ 是一条曲线，并假设它满足指数为 $\alpha$，$\frac{1}{2} \le \alpha \le 1$ 的李普希茨条件，即对所有 $t, t_0 \in [a, b]$，有 $|z(t) - z(t_0)| \le A |t - t_0|^\alpha$。
+证明对于 $0 < \delta \le 1$，有 $m(\gamma_\delta) = O(\delta^{2-1/\alpha})$。
+
+30. 若在有界函数 $F$ 在 $\mathbb{R}$ 上对任何有限子区间 $[a, b]$ 都是有界变差的，且 $\sup_{a,b} V_a^b(F) < \infty$，则称 $F$ 在 $\mathbb{R}$ 上是有界变差的。
+证明这样的 $F$ 具有以下两个性质：
+
+> 152 第 3 章 微分与积分
+
+(a) $\int_{\mathbb{R}} |F(x+h) - F(x)| dx \le A|h|$，对于某个常数 $A$ 和所有 $h \in \mathbb{R}$。
+(b) $|\int_{\mathbb{R}} F(x)\phi'(x) dx| \le A$，其中 $\phi$ 遍历所有具有紧支集的 $C^1$ 函数，且满足 $\sup_{x \in \mathbb{R}} |\phi'(x)| \le 1$。
+关于逆命题以及在 $\mathbb{R}^d$ 中的类似结果，见下面的习题 6。
+提示：对于 (a)，将 $F$ 写成 $F = F_1 - F_2$，其中 $F_j$ 是单调且有界的。对于 (b)，由此从 (a) 推导。
+
+31. 设 $F$ 为第 3.1 节描述的康托尔 - 勒贝格函数。考虑 $F$ 的图像曲线，即由 $x(t) = t$ 且 $y(t) = F(t)$ 定义、其中 $0 \le t \le 1$ 的曲线。证明该曲线上 $0 \le t \le x$ 这一段的长度 $L(x)$ 由 $L(x) = x + F(x)$ 给出。因此曲线的总长度为 2。
+
+32. 设 $f: \mathbb{R} \to \mathbb{R}$。证明 $f$ 满足 Lipschitz 条件
+$$|f(x) - f(y)| \le M|x - y|$$
+对某个 $M$ 和所有 $x, y \in \mathbb{R}$，当且仅当 $f$ 满足以下两个性质：
+(i) $f$ 是绝对连续的。
+(ii) $|f'(x)| \le M$ 对几乎处处的 $x$ 成立。
+
+
+1. 假设 $\phi$ 是 $\mathbb{R}^d$ 上的可积函数，且 $\int_{\mathbb{R}^d} \phi(x) dx = 1$。设 $K_\epsilon(x) = \epsilon^{-d}\phi(x/\epsilon), \epsilon > 0$。
+(a) 证明 $\{K_\epsilon\}_{\epsilon > 0}$ 是好核族。
+(b) 此外，假设 $\phi$ 是有界的且在某个有界集合上支撑。验证 $\{K_\epsilon\}_{\epsilon > 0}$ 是一个单位逼近。
+(c) 说明定理 2.3（$L^1$ 范数下的收敛性）同样适用于好核。
+
+2. 假设 $\{K_\epsilon\}_\epsilon$ 是一个满足以下条件的核族：
+(i) $|K_\epsilon(x)| \le A\epsilon^{-d}$ 对所有 $\epsilon > 0$ 成立。
+(ii) $|K_\epsilon(x)| \le A\epsilon/|x|^{d+1}$ 对所有 $\epsilon > 0$ 成立。
+(iii) $\int_{-\infty}^{\infty} K_\epsilon(x) dx = 0$ 对所有 $\epsilon > 0$ 成立。
+因此 $K_\epsilon$ 满足单位逼近的条件 (i) 和 (ii)，但其平均值是 0 而不是 1。证明如果 $f$ 在 $\mathbb{R}^d$ 上可积，则 $(f * K_\epsilon)(x) \to 0$ 对几乎处处的 $x$，当 $\epsilon \to 0$。
+
+3. 假设 0 是集合 $E \subset \mathbb{R}$ 的（勒贝格）密度点。证明对于下面的每个独立条件，都存在一个无穷点序列 $x_n \in E$，满足 $x_n \neq 0$，且当 $n \to \infty$ 时 $x_n \to 0$。
+(a) 该序列还对所有 $n$ 满足 $-x_n \in E$。
+(b) 此外，对所有 $n$，$2x_n$ 属于 $E$。
+
+> 146 第 3 章 微分与积分
+推广。
+
+**4.** 证明：若 $f$ 在 $\mathbb{R}^d$ 上可积，且不恒为零，则存在 $c > 0$，使得对所有 $|x| \ge 1$ 有
+$$ f^*(x) \ge \frac{c}{|x|^d}. $$
+由此推论 $f^*$ 在 $\mathbb{R}^d$ 上不可积。然后说明，当 $\int |f| = 1$ 时，对于所有 $\alpha > 0$ 均成立的弱型估计
+$$ m(\{x : f^*(x) > \alpha\}) \le \frac{c}{\alpha} $$
+在最下面的意义上是最优的：如果 $f$ 支撑在单位球内且 $\int |f| = 1$，则存在 $c' > 0$ 使得对所有充分小的 $\alpha$ 有
+$$ m(\{x : f^*(x) > \alpha\}) \ge \frac{c'}{\alpha}. $$
+提示：第一部分利用事实：存在某个球 $B$ 使得 $\int_B |f| > 0$。
+
+**5.** 考虑定义在 $\mathbb{R}^d$ 上的函数
+$$ f(x) = \begin{cases} \frac{1}{|x|(\log(1/|x|))^2}, & \text{若 } |x| \le 1/2 \\ 0, & \text{其他情况} \end{cases} $$
+(a) 验证 $f$ 是可积的。
+(b) 建立不等式
+$$ f^*(x) \ge \frac{c}{|x|\log(1/|x|)}, \quad \text{对于某个 } c > 0 \text{ 和所有 } |x| \le 1/2, $$
+从而得出结论：极大函数 $f^*$ 并非局部可积。
+
+**6.** 在一维情形下，关于极大函数的基本不等式 (1) 有一个版本是以恒等式的形式出现的。我们定义“单侧”极大函数
+$$ f^*_+(x) = \sup_{h>0} \frac{1}{h} \int_x^{x+h} |f(y)| \, dy. $$
+若 $E^+_\alpha = \{x \in \mathbb{R} : f^*_+(x) > \alpha\}$，则
+$$ m(E^+_\alpha) = \frac{1}{\alpha} \int_{E^+_\alpha} |f(y)| \, dy. $$
+提示：引理 3.5 应用于 $F(x) = \int_0^x |f(y)| \, dy - \alpha x$。则 $E^+_\alpha$ 是不相交区间 $(a_k, b_k)$ 的并集，满足 $\int_{a_k}^{b_k} |f(y)| \, dy = \alpha(b_k - a_k)$。
+
+> 5. Exercises 147
+
+7. 利用推论 1.5 证明：若 $[0,1]$ 的可测子集 $E$ 满足存在某个 $\alpha > 0$，使得对于 $[0,1]$ 中的所有区间 $I$ 都有 $m(E \cap I) \ge \alpha m(I)$，则 $E$ 的测度为 1。另参见第 1 章习题 28。
+
+8. 假设 $A$ 是 $\mathbb{R}$ 中的勒贝格可测集且 $m(A) > 0$。是否存在序列 $(s_n)_{n=1}^\infty$ 使得 $\bigcup_{n=1}^\infty (A+s_n)$ 在 $\mathbb{R}$ 中的补集的测度为零？
+提示：对于每个 $\varepsilon > 0$，找到一个长度为 $\ell_\varepsilon$ 的区间 $I_\varepsilon$，使得 $m(A \cap I_\varepsilon) \ge (1-\varepsilon)m(I_\varepsilon)$。考虑 $\bigcup_{k} (A+t_k)$，其中 $t_k = k\ell_\varepsilon$。然后改变 $\varepsilon$。
+
+9. 设 $F$ 为 $\mathbb{R}$ 中的闭集，记 $\delta(x)$ 为 $x$ 到 $F$ 的距离，即 $\delta(x) = d(x, F) = \inf \{|x-y| : y \in F\}$。显然，只要 $x \in F$，就有 $\delta(x+y) \le |y|$。证明更精细的估计式 $\delta(x+y) = o(|y|)$ 对几乎所有的 $x \in F$ 成立，即当 $x \in F$ 时对几乎所有的 $x$，$\delta(x+y)/|y| \to 0$。
+提示：假设 $x$ 是 $F$ 的一个密度点。
+
+10. 构造一个定义在 $\mathbb{R}$ 上的递增函数，使其不连续点的集合恰好为 $\mathbb{Q}$。
+
+11. 如果 $a, b > 0$，令
+$$f(x) = \begin{cases} x^a \sin(x^{-b}) & \text{若 } 0 < x \le 1, \\ 0 & \text{若 } x = 0. \end{cases}$$
+证明 $f$ 在 $[0,1]$ 上是有界变差的，当且仅当 $a > b$。然后，取 $a = b$，对每个 $0 < \alpha < 1$，构造一个满足指数为 $\alpha$ 的霍尔德（Lipschitz）条件的函数，即满足
+$$|f(x) - f(y)| \le A|x-y|^\alpha$$
+但不是有界变差的函数。
+提示：注意如果 $h > 0$，差值 $|f(x+h)-f(x)|$ 可以估计为 $C(x+h)^a$，或者根据均值定理由 $C_0 h/x$ 估计。然后考虑两种情况，即 $x^{a+1} \ge h$ 或 $x^{a+1} < h$。$\alpha$ 和 $a$ 之间有什么关系？
+
+12. 考虑函数 $F(x) = x^2 \sin(1/x^2), x \ne 0$，并定义 $F(0) = 0$。证明 $F'(x)$ 对每个 $x$ 都存在，但 $F'$ 在 $[-1,1]$ 上不可积。
+
+13. 直接从定义证明康托尔 - 勒贝格函数（Cantor-Lebesgue function）不是绝对连续的。
+
+14. 在讨论函数的可微性时出现了以下可测性问题。
+
+> 148 第三章 微分与积分
+
+(a) 假设 $F$ 在 $[a, b]$ 上连续。证明
+$$D^+F(x) = \limsup_{h \to 0, h > 0} \frac{F(x+h)-F(x)}{h}$$
+是可测的。
+
+(b) 假设 $J(x) = \sum_{n=1}^\infty \alpha_n j_n(x)$ 如本章第 3.3 节所述的跳跃函数。证明
+$$\limsup_{h \to 0} \frac{J(x+h)-J(x)}{h}$$
+是可测的。
+
+提示：对于 (a)，$F$ 的连续性允许人们将对 $h$ 取上极限的限制缩小到可数多个值。对于 (b)，给定 $k, m$，设 $F_{N,k;m} = \sup_{1/k < |h| < 1/m} \left|\frac{J_N(x+h)-J_N(x)}{h}\right|$，其中 $J_N(x) = \sum_{n=1}^N \alpha_n j_n(x)$。注意每个 $F_{N,k;m}$ 都是可测的。然后依次令 $N \to \infty, k \to \infty$，最后 $m \to \infty$。
+
+15. 假设 $F$ 是有界变差且连续的。证明存在 $F = F_1 - F_2$，其中 $F_1$ 和 $F_2$ 均为单调且连续的。
+
+16. 证明如果 $F$ 在 $[a, b]$ 上是有界变差的，则：
+(a) $\int_a^b |F'(x)| dx \le T_F(a, b)$。
+(b) $\int_a^b |F'(x)| dx = T_F(a, b)$ 当且仅当 $F$ 是绝对连续的。
+作为 (b) 的结果，参数化曲线 $z$ 的可求长曲线的公式 $L = \int_a^b |z'(t)| dt$ 成立的当且仅当 $z$ 是绝对连续的。
+
+17. 证明如果 $\{K_\epsilon\}_{\epsilon > 0}$ 是一个逼近恒同元的族，则对某个常数 $c > 0$ 及所有可积函数 $f$，有
+$$\sup_{\epsilon > 0} |(f * K_\epsilon)(x)| \le c f^*(x)$$。
+
+18. 验证第 1 章习题 2 中给出的 Cantor-Lebesgue 函数的定义与本章节 3.1 节给出的定义的相容性。
+
+19. 证明如果 $f: \mathbb{R} \to \mathbb{R}$ 是绝对连续的，则
+(a) $f$ 将零测集映射为零测集。
+(b) $f$ 将可测集映射为可测集。
+
+> 5. 练习 149
+
+20. 本习题讨论定义在 $[a, b]$ 上绝对连续且递增的函数 $F$。令 $A=F(a)$，$B=F(b)$。
+
+(a) 存在这样的 $F$，它除了是绝对连续递增之外还是严格递增的，但其在某个正测度集上满足 $F'(x) = 0$。
+
+(b) (a) 中的 $F$ 可以选取为使得存在可测子集 $E \subseteq [A, B]$，满足 $m(E) = 0$，以至于 $F^{-1}(E)$ 不可测。
+
+(c) 然而，请证明：对于任意递增绝对连续函数 $F$，以及 $[A, B]$ 的可测子集 $E$，集合 $F^{-1}(E) \cap \{x \mid F'(x) > 0\}$ 是可测的。
+提示：(a) 令 $F(x) = \int_a^x \chi_K(t) dt$，其中 $K$ 是一个正测度的类康托尔集 $C$ 的补集。对于 (b)，注意 $F(C)$ 是零测集。最后，对于 (c)，首先证明对于任何开集 $O$，有 $m(O) = \int_{F^{-1}(O)} F'(x) dx$。
+
+21. 设 $F$ 在 $[a, b]$ 上绝对连续且递增，且有 $F(a) = A$ 和 $F(b) = B$。假设 $f$ 是 $[A, B]$ 上的任意可测函数。
+
+(a) 证明 $f(F(x))F'(x)$ 在 $[a, b]$ 上是可测的。注意：根据 20(b)，$f(F(x))$ 不一定可测。
+
+(b) 证明换元公式：如果 $f$ 在 $[A, B]$ 上可积，那么 $f(F(x))F'(x)$ 也是可积的，并且
+$$
+\int_A^B f(y) dy = \int_a^b f(F(x)) F'(x) dx
+$$
+提示：从 20(c) 中使用的恒等式 $m(O) = \int_{F^{-1}(O)} F'(x) dx$ 开始。
+
+22. 假设 $F$ 和 $G$ 都在 $[a, b]$ 上绝对连续。证明它们的乘积 $FG$ 也是绝对连续的。这有以下推论。
+
+(a) 只要 $F$ 和 $G$ 在 $[a, b]$ 上绝对连续，就有
+$$
+\int_a^b F'(x) G(x) dx = -\int_a^b F(x) G'(x) dx + [F(x)G(x)]_a^b
+$$
+
+(b) 设 $F$ 在 $[-\pi, \pi]$ 上绝对连续且满足 $F(\pi) = F(-\pi)$。证明若
+$$
+a_n = \frac{1}{2\pi} \int_{-\pi}^\pi F(x) e^{-inx} dx
+$$
+使得 $F(x) \sim \sum_{n=-\infty}^\infty a_n e^{inx}$，那么
+$$
+F'(x) \sim \sum_{n=-\infty}^\infty i n a_n e^{inx}
+$$
+
+> 150 第 3 章 微分和积分
+
+(c) 如果 $F(\xi) \neq F(\eta)$ 会发生什么？提示：考虑 $F(x) = x$。
+
+23. 设 $F$ 在 $[a, b]$ 上连续。证明以下结论。
+(a) 假设对于每一个 $x \in [a, b]$，都有 $(D_+ F)(x) \ge 0$。那么 $F$ 在 $[a, b]$ 上是单调递增的。
+(b) 如果对于每一个 $x \in (a, b)$，$F'(x)$ 存在且 $|F'(x)| \le M$，则 $|F(x) - F(y)| \le M|x - y|$，且 $F$ 是绝对连续的。
+
+提示：对于 (a)，只需证明 $F(b) - F(a) \ge 0$。假设否则。于是令 $G_\epsilon(x) = F(x) - F(a) + \epsilon(x - a)$，对于足够小的 $\epsilon > 0$，我们有 $G_\epsilon(a) = 0$，但 $G_\epsilon(b) < 0$。现在令 $x_0 \in [a, b)$ 为满足 $G_\epsilon(x_0) \ge 0$ 的最大的 $x_0$ 值。然而，$(D_+ G_\epsilon)(x_0) > 0$。
+
+24. 假设 $F$ 是 $[a, b]$ 上的增函数。
+(a) 证明我们可以写成
+$$ F = F_A + F_C + F_J; $$
+其中 $F_A, F_C$ 和 $F_J$ 每个函数都是增函数，并且：
+(i) $F_A$ 是绝对连续的。
+(ii) $F_C$ 是连续的，但是对于几乎处处（a.e.）的 $x$，$F_C'(x) = 0$。
+(iii) $F_J$ 是一个跳跃函数。
+(b) 此外，每个分量 $F_A, F_C, F_J$ 在附加常数的意义下是唯一确定的。
+
+上述即为 $F$ 的勒贝格分解。对于任何有界变差的 $F$，都存在相应的分解。
+
+25. 下述说明了在微分定理 1.4, 3.4 和 3.11 中允许具有零测集的一般例外集的必要性。设 $E$ 为 $\mathbb{R}^d$ 中任意零测集。证明：
+(a) 存在一个非负可积函数 $f \in L^1(\mathbb{R}^d)$，使得对于每个 $x \in E$，
+$$ \liminf_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B f(y) dy = 1。 $$
+(b) 当 $d = 1$ 时，这可以重述如下。存在一个递增的绝对连续函数 $F$，使得
+$$ D_+(F)(x) = D_-(F)(x) = 1; \text{对于每个 } x \in E。 $$
+
+> 5. Exercises 151
+
+提示：找到开集 $O_n \supseteq E$，满足 $m(O_n) < 2^{-n}$，并令 $f(x) = \sum_{n=1}^\infty \chi_{O_n}(x)$。
+
+26. 任意集合 $E$ 的外测度 $m^*(E)$ 的另一种定义方式（如第 1 章第 2 节所述），是将 $E$ 被方体的覆盖替换为被球的覆盖。即，若我们定义 $m_B^*(E)$ 为 $\inf \sum_{j=1}^\infty m(B_j)$，其中下确界取遍所有由开球覆盖 $E \subseteq \bigcup_{j=1}^\infty B_j$ 的情况。那么 $m^*(E) = m_B^*(E)$。（注意：该结果导出勒贝格测度在旋转下不变性的一个替代证明。）
+
+显然 $m^*(E) \le m_B^*(E)$。请通过展示以下内容来证明反向不等式：对于任意 $\epsilon > 0$，存在一族球 $\{B_j\}$ 使得 $E \subseteq \bigcup_j B_j$ 且 $\sum_j m(B_j) \le m^*(E) + \epsilon$。还需注意到，对于任意预先指定的 $\delta$，我们可以选择直径小于 $\delta$ 的球。
+
+提示：首先假设 $E$ 是可测的，选开区间 $O \supseteq E$ 使得 $m(O \setminus E) < \epsilon_0$。接下来，利用引理 3.10，找到球 $B_1, \dots, B_N$ 使得 $\sum_{j=1}^N m(B_j) \le m(E) + 2\epsilon_0$ 且 $m(E \setminus \bigcup_{j=1}^N B_j) \le 3\epsilon_0$。最后，用一组立方体的并覆盖 $E \setminus \bigcup_{j=1}^N B_j$，其测度之和 $\le 4\epsilon_0$，并将这些立方体替换为包含它们的球。对于一般的 $E$，先从应用上述当 $E$ 是立方体时开始。
+
+27. 一条可求长曲线在曲线的几乎所有点处都有切线。使这个陈述精确化。
+
+28. $\mathbb{R}^d$ 中的一条曲线是一个从区间 $[a, b]$ 到 $\mathbb{R}^d$ 的连续映射 $t \mapsto z(t)$。
+(a) 陈述并证明关于曲线可求长性及其长度的定理 3.1, 4.1 和 4.3 的类似命题。
+(b) 将 $\mathbb{R}^d$ 中紧集 $K$ 的（一维）闵可夫斯基含量 $M(K)$ 定义为极限（如果存在）：
+$$ \frac{m(K_\delta)}{m_{d-1}(B(\delta))} \quad (\text{当 } \delta \to 0) $$
+其中 $m_{d-1}(B(\delta))$ 是由 $B(\delta) = \{x \in \mathbb{R}^{d-1} : |x| < \delta\}$ 定义的球在 $\mathbb{R}^{d-1}$ 中的测度。陈述并证明关于 $\mathbb{R}^d$ 中曲线的命题 4.5 和 4.7 的类似命题。
+
+29. 设 $\gamma = \{z(t) : a \le t \le b\}$ 是一条曲线，并假设它满足指数为 $\alpha$，$\frac{1}{2} \le \alpha \le 1$ 的李普希茨条件，即对所有 $t, t_0 \in [a, b]$，有 $|z(t) - z(t_0)| \le A |t - t_0|^\alpha$。
+证明对于 $0 < \delta \le 1$，有 $m(\gamma_\delta) = O(\delta^{2-1/\alpha})$。
+
+30. 若在有界函数 $F$ 在 $\mathbb{R}$ 上对任何有限子区间 $[a, b]$ 都是有界变差的，且 $\sup_{a,b} V_a^b(F) < \infty$，则称 $F$ 在 $\mathbb{R}$ 上是有界变差的。
+证明这样的 $F$ 具有以下两个性质：
+
+> 152 第 3 章 微分与积分
+
+(a) $\int_{\mathbb{R}} |F(x+h) - F(x)| dx \le A|h|$，对于某个常数 $A$ 和所有 $h \in \mathbb{R}$。
+(b) $|\int_{\mathbb{R}} F(x)\phi'(x) dx| \le A$，其中 $\phi$ 遍历所有具有紧支集的 $C^1$ 函数，且满足 $\sup_{x \in \mathbb{R}} |\phi'(x)| \le 1$。
+关于逆命题以及在 $\mathbb{R}^d$ 中的类似结果，见下面的习题 6。
+提示：对于 (a)，将 $F$ 写成 $F = F_1 - F_2$，其中 $F_j$ 是单调且有界的。对于 (b)，由此从 (a) 推导。
+
+31. 设 $F$ 为第 3.1 节描述的康托尔 - 勒贝格函数。考虑 $F$ 的图像曲线，即由 $x(t) = t$ 且 $y(t) = F(t)$ 定义、其中 $0 \le t \le 1$ 的曲线。证明该曲线上 $0 \le t \le x$ 这一段的长度 $L(x)$ 由 $L(x) = x + F(x)$ 给出。因此曲线的总长度为 2。
+
+32. 设 $f: \mathbb{R} \to \mathbb{R}$。证明 $f$ 满足 Lipschitz 条件
+$$|f(x) - f(y)| \le M|x - y|$$
+对某个 $M$ 和所有 $x, y \in \mathbb{R}$，当且仅当 $f$ 满足以下两个性质：
+(i) $f$ 是绝对连续的。
+(ii) $|f'(x)| \le M$ 对几乎处处的 $x$ 成立。
+

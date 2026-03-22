@@ -1,0 +1,102 @@
+
+命题 4.7 设 $\Gamma = \{z(t); a \le t \le b\}$ 是一个长度为 $L$ 的可求长曲线。则
+$M^*(\Gamma) \le L.$
+
+数量 $M^*(\Gamma)$ 和 $L$ 当然与所使用的参数化无关；由于曲线是可求长的，使用弧长参数化将很方便。于是我们将曲线写为 $z(s) = (x(s), y(s))$，其中 $0 \le s \le L$，并回顾此时 $z(s)$ 是绝对连续的，并且对于几乎所有 $s \in [0, L]$，有 $|z'(s)| = 1$。
+
+我们首先固定任意 $0 < \varepsilon < 1$，并找到一个可测集 $E_\varepsilon \subset \mathbb{R}$ 和一个正数 $r_\varepsilon$，使得 $m(E_\varepsilon) < \varepsilon$ 且
+$$
+\sup_{0 < |h| < r_\varepsilon} \left| \frac{z(s+h) - z(s)}{h} - z'(s) \right| < \varepsilon \quad \text{对于所有 } s \in [0, L] \setminus E_\varepsilon。 \tag{14}
+$$
+事实上，对于每个整数 $n$，令
+$$
+F_n(s) = \sup_{0 < |h| < 1/n} \left| \frac{z(s+h) - z(s)}{h} - z'(s) \right|
+$$
+（其中 $z(s)$ 已在 $[0, L]$ 之外进行了延拓，以便当 $s < 0$ 时 $z(s) = z(0)$，且当 $s > L$ 时 $z(s) = z(L)$）。由于 $z(s)$ 是连续的，$F_n(s)$ 定义中 $h$ 的上确界可以被可数个可测函数的上确界代替，因此每个 $F_n$ 都是可测的。然而，$F_n(s) \to 0$，当 $n \to \infty$ 对于几乎所有 $s \in [0, L]$。因此根据 Egorov 定理，收敛在集合 $E_\varepsilon$ 之外是一致性的，其中 $m(E_\varepsilon) < \varepsilon$，
+
+> 4. Rectifiable curves and the isoperimetric inequality 141
+
+因此我们只需选取 $r^2 = 1/n$，对于足够大的 $n$，即可建立 (14)。为了下文方便起见，如同我们可以做到的那样，假设对于每个不在 $E_\varepsilon$ 中的 $s$，导数 $z'(s)$ 存在且 $|z'(s)| = 1$。
+
+现在对于任意满足 $0 < \delta < r^2$ (且 $\delta < 1$) 的 $\delta$，我们将区间 $[0, L]$ 划分为一系列连续闭区间，每个区间的长度为 $\delta$（除了最后一个区间长度可能小于等于 $\delta$）。这样总共会有 $N = L/\delta + 1$ 个这样的区间产生。我们将这些区间记为 $I_1, I_2, \dots, I_N$，并将它们分为两类。第一类，那些我们称之为“好”的区间 $I_j$，是指具有性质 $I_j \not\subset E_\varepsilon$ 的区间。第二类，那些“坏”的区间，具有性质 $I_j \subset E_\varepsilon$。因此，$\bigcup_{I_j \text{ bad}} I_j \subset E_\varepsilon$，故其并集的测度 $< \varepsilon$。
+
+我们当然有 $[0, L] \subset \bigcup_{j=1}^N I_j$，并且如果我们用 $\gamma_j$ 表示由 $\{z(s) : s \in I_j\}$ 给出的 $\gamma$ 的段，则 $\gamma = \bigcup_{j=1}^N \gamma_j$，因此 $\gamma^\pm = \bigcup_{j=1}^N (\gamma_j)^\pm$ 且 $m(\gamma^\pm) \le \sum_{j=1}^N m((\gamma_j)^\pm)$。
+
+首先考虑当 $I_j$ 为好区间时，$m((\gamma_j)^\pm)$ 的贡献。回想一下，对于此类 $I_j = [a_j, b_j]$，其中存在一个 $s_0 \in I_j$ 不属于 $E_\varepsilon$，因此 (14) 式对 $s=s_0$ 成立。现在让我们通过引入坐标系来可视化 $\gamma_j$，使得 $z(s_0) = 0$ 且 $z'(s_0) = 1$（这可以通过适当的平移和旋转来实现）。我们用 $z(s)$ 和 $\gamma_j$ 表示变换后的曲线段。
+
+注意，当 $h$ 在区间 $[a_j - s_0, b_j - s_0]$ 上变化时，$s_0 + h$ 在 $I_j = [a_j, b_j]$ 上变化。因此 $\gamma_j$ 包含在矩形 $[a_j - s_0 - \varepsilon/2, b_j - s_0 + \varepsilon/2] \times [-\varepsilon/2, \varepsilon/2]$ 内；
+
+> 142 第 3 章：微分与积分
+
+由于构造原因有 $|h|\eta < r\epsilon$，且由 (14) 式有 $|z(s_0+h) - z(s_0)| < \epsilon|h|$。因此，$(J)_{\delta}$ 包含在矩形
+$[a_j - s_0 - \epsilon\eta - \delta; b_j - s_0 + \epsilon\eta + \delta] \times [-\epsilon\eta - \delta; \epsilon\eta + \delta];$
+该矩形的测度为 $\eta(\eta + 2\epsilon\eta + 2\delta)(2\epsilon\eta + 2\delta)$。因此，由于 $\epsilon \le 1$，我们有
+(15) $m((J)_{\delta}) \le 2\delta\eta + O(\epsilon\delta\eta + \delta^2 + \epsilon\eta^2)$
+其中大 \( O \) 中的界限独立于 $\epsilon, \delta$ 和 $\eta$。这是关于好区间的期望估计。
+为了处理其余的区间，我们利用对于所有 $s$ 和 $s_0$，都有 $|z(s) - z(s_0)| \le |s - s_0|$ 这一事实。因此在每种情况下 $J$ 都包含在一个半径为 $\eta$ 的球（圆盘）中，从而 $(J)_{\delta}$ 包含在一个半径为 $\eta + \delta$ 的球中。因此我们得到粗糙估计
+(16) $m((J)_{\delta}) = O(\delta^2 + \eta^2)$
+现在我们将 (15) 式对好区间求和（其数量至多为 $L/\eta + 1$），将 (16) 式对坏区间求和。后者的数量至多为 $\epsilon/\eta + 1$，因为它们的并集包含在 $E^{\epsilon}$ 中，而该集合的测度 $<\epsilon$。综上所述，
+$$m(J_{\delta}) \le 2\delta L + 2\delta\eta + O(\epsilon\delta + \delta^2/\eta + \epsilon\eta) + O\left(\frac{\epsilon}{\eta + 1}(\delta^2 + \eta^2)\right)$$
+这简化为不等式$$
+\frac{m(J_{\delta})}{2\delta} \le L + O\left(\eta + \epsilon + \frac{\delta}{\eta} + \frac{\epsilon\delta}{\eta} + \frac{\eta^2}{\delta}\right) \le L + O\left(\eta + \epsilon + \frac{\delta}{\eta} + \frac{\eta^2}{\delta}\right);
+$$
+最后一行中我们用到了 $\epsilon < 1$ 和 $\eta < 1$ 的事实。为了从这个等式中获得当 $\delta \to 0$ 时的有利估计，我们需要大致地将 $\eta$（子区间的长度）选择为与 $\delta$ 同阶的量。一个有效的选择是 $\eta = \delta/\epsilon^{1/2}$。如果我们固定这个选择，并且只关注满足 $0 < \delta < \epsilon^{1/2}/r^2$ 的 $\delta$，那么自动地 $\eta < r\epsilon$，正如 (14) 式所要求的那样。将 $\eta = \delta/\epsilon^{1/2}$ 代入上述不等式中得到
+$$\frac{m(J_{\delta})}{2\delta} \le L + O\left(\frac{\delta}{\epsilon^{1/2}} + \epsilon + \epsilon^{1/2} + \frac{\delta}{\epsilon}\right)$$
+
+> 4. 可求长曲线与等周不等式 143
+
+因此
+$$ \limsup_{\epsilon \to 0} m(A_\epsilon) \leq 2\epsilon \cdot L + O(\epsilon + \epsilon^{1/2}). $$
+现在我们可以令 $\epsilon \to 0$ 以得到期望的结论 $M(A) \leq L$，至此，命题和定理的证明均已完成。
+
+
+命题 4.7 设 $\Gamma = \{z(t); a \le t \le b\}$ 是一个长度为 $L$ 的可求长曲线。则
+$M^*(\Gamma) \le L.$
+
+数量 $M^*(\Gamma)$ 和 $L$ 当然与所使用的参数化无关；由于曲线是可求长的，使用弧长参数化将很方便。于是我们将曲线写为 $z(s) = (x(s), y(s))$，其中 $0 \le s \le L$，并回顾此时 $z(s)$ 是绝对连续的，并且对于几乎所有 $s \in [0, L]$，有 $|z'(s)| = 1$。
+
+我们首先固定任意 $0 < \varepsilon < 1$，并找到一个可测集 $E_\varepsilon \subset \mathbb{R}$ 和一个正数 $r_\varepsilon$，使得 $m(E_\varepsilon) < \varepsilon$ 且
+$$
+\sup_{0 < |h| < r_\varepsilon} \left| \frac{z(s+h) - z(s)}{h} - z'(s) \right| < \varepsilon \quad \text{对于所有 } s \in [0, L] \setminus E_\varepsilon。 \tag{14}
+$$
+事实上，对于每个整数 $n$，令
+$$
+F_n(s) = \sup_{0 < |h| < 1/n} \left| \frac{z(s+h) - z(s)}{h} - z'(s) \right|
+$$
+（其中 $z(s)$ 已在 $[0, L]$ 之外进行了延拓，以便当 $s < 0$ 时 $z(s) = z(0)$，且当 $s > L$ 时 $z(s) = z(L)$）。由于 $z(s)$ 是连续的，$F_n(s)$ 定义中 $h$ 的上确界可以被可数个可测函数的上确界代替，因此每个 $F_n$ 都是可测的。然而，$F_n(s) \to 0$，当 $n \to \infty$ 对于几乎所有 $s \in [0, L]$。因此根据 Egorov 定理，收敛在集合 $E_\varepsilon$ 之外是一致性的，其中 $m(E_\varepsilon) < \varepsilon$，
+
+> 4. Rectifiable curves and the isoperimetric inequality 141
+
+因此我们只需选取 $r^2 = 1/n$，对于足够大的 $n$，即可建立 (14)。为了下文方便起见，如同我们可以做到的那样，假设对于每个不在 $E_\varepsilon$ 中的 $s$，导数 $z'(s)$ 存在且 $|z'(s)| = 1$。
+
+现在对于任意满足 $0 < \delta < r^2$ (且 $\delta < 1$) 的 $\delta$，我们将区间 $[0, L]$ 划分为一系列连续闭区间，每个区间的长度为 $\delta$（除了最后一个区间长度可能小于等于 $\delta$）。这样总共会有 $N = L/\delta + 1$ 个这样的区间产生。我们将这些区间记为 $I_1, I_2, \dots, I_N$，并将它们分为两类。第一类，那些我们称之为“好”的区间 $I_j$，是指具有性质 $I_j \not\subset E_\varepsilon$ 的区间。第二类，那些“坏”的区间，具有性质 $I_j \subset E_\varepsilon$。因此，$\bigcup_{I_j \text{ bad}} I_j \subset E_\varepsilon$，故其并集的测度 $< \varepsilon$。
+
+我们当然有 $[0, L] \subset \bigcup_{j=1}^N I_j$，并且如果我们用 $\gamma_j$ 表示由 $\{z(s) : s \in I_j\}$ 给出的 $\gamma$ 的段，则 $\gamma = \bigcup_{j=1}^N \gamma_j$，因此 $\gamma^\pm = \bigcup_{j=1}^N (\gamma_j)^\pm$ 且 $m(\gamma^\pm) \le \sum_{j=1}^N m((\gamma_j)^\pm)$。
+
+首先考虑当 $I_j$ 为好区间时，$m((\gamma_j)^\pm)$ 的贡献。回想一下，对于此类 $I_j = [a_j, b_j]$，其中存在一个 $s_0 \in I_j$ 不属于 $E_\varepsilon$，因此 (14) 式对 $s=s_0$ 成立。现在让我们通过引入坐标系来可视化 $\gamma_j$，使得 $z(s_0) = 0$ 且 $z'(s_0) = 1$（这可以通过适当的平移和旋转来实现）。我们用 $z(s)$ 和 $\gamma_j$ 表示变换后的曲线段。
+
+注意，当 $h$ 在区间 $[a_j - s_0, b_j - s_0]$ 上变化时，$s_0 + h$ 在 $I_j = [a_j, b_j]$ 上变化。因此 $\gamma_j$ 包含在矩形 $[a_j - s_0 - \varepsilon/2, b_j - s_0 + \varepsilon/2] \times [-\varepsilon/2, \varepsilon/2]$ 内；
+
+> 142 第 3 章：微分与积分
+
+由于构造原因有 $|h|\eta < r\epsilon$，且由 (14) 式有 $|z(s_0+h) - z(s_0)| < \epsilon|h|$。因此，$(J)_{\delta}$ 包含在矩形
+$[a_j - s_0 - \epsilon\eta - \delta; b_j - s_0 + \epsilon\eta + \delta] \times [-\epsilon\eta - \delta; \epsilon\eta + \delta];$
+该矩形的测度为 $\eta(\eta + 2\epsilon\eta + 2\delta)(2\epsilon\eta + 2\delta)$。因此，由于 $\epsilon \le 1$，我们有
+(15) $m((J)_{\delta}) \le 2\delta\eta + O(\epsilon\delta\eta + \delta^2 + \epsilon\eta^2)$
+其中大 \( O \) 中的界限独立于 $\epsilon, \delta$ 和 $\eta$。这是关于好区间的期望估计。
+为了处理其余的区间，我们利用对于所有 $s$ 和 $s_0$，都有 $|z(s) - z(s_0)| \le |s - s_0|$ 这一事实。因此在每种情况下 $J$ 都包含在一个半径为 $\eta$ 的球（圆盘）中，从而 $(J)_{\delta}$ 包含在一个半径为 $\eta + \delta$ 的球中。因此我们得到粗糙估计
+(16) $m((J)_{\delta}) = O(\delta^2 + \eta^2)$
+现在我们将 (15) 式对好区间求和（其数量至多为 $L/\eta + 1$），将 (16) 式对坏区间求和。后者的数量至多为 $\epsilon/\eta + 1$，因为它们的并集包含在 $E^{\epsilon}$ 中，而该集合的测度 $<\epsilon$。综上所述，
+$$m(J_{\delta}) \le 2\delta L + 2\delta\eta + O(\epsilon\delta + \delta^2/\eta + \epsilon\eta) + O\left(\frac{\epsilon}{\eta + 1}(\delta^2 + \eta^2)\right)$$
+这简化为不等式$$
+\frac{m(J_{\delta})}{2\delta} \le L + O\left(\eta + \epsilon + \frac{\delta}{\eta} + \frac{\epsilon\delta}{\eta} + \frac{\eta^2}{\delta}\right) \le L + O\left(\eta + \epsilon + \frac{\delta}{\eta} + \frac{\eta^2}{\delta}\right);
+$$
+最后一行中我们用到了 $\epsilon < 1$ 和 $\eta < 1$ 的事实。为了从这个等式中获得当 $\delta \to 0$ 时的有利估计，我们需要大致地将 $\eta$（子区间的长度）选择为与 $\delta$ 同阶的量。一个有效的选择是 $\eta = \delta/\epsilon^{1/2}$。如果我们固定这个选择，并且只关注满足 $0 < \delta < \epsilon^{1/2}/r^2$ 的 $\delta$，那么自动地 $\eta < r\epsilon$，正如 (14) 式所要求的那样。将 $\eta = \delta/\epsilon^{1/2}$ 代入上述不等式中得到
+$$\frac{m(J_{\delta})}{2\delta} \le L + O\left(\frac{\delta}{\epsilon^{1/2}} + \epsilon + \epsilon^{1/2} + \frac{\delta}{\epsilon}\right)$$
+
+> 4. 可求长曲线与等周不等式 143
+
+因此
+$$ \limsup_{\epsilon \to 0} m(A_\epsilon) \leq 2\epsilon \cdot L + O(\epsilon + \epsilon^{1/2}). $$
+现在我们可以令 $\epsilon \to 0$ 以得到期望的结论 $M(A) \leq L$，至此，命题和定理的证明均已完成。
+

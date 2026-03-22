@@ -1,0 +1,76 @@
+如果 $\Gamma = \{z(t); a \le t \le b\}$ 是任意一条曲线，且 $\Delta = |z(b) - z(a)|$ 是其端点间的距离，那么 $m(\Gamma_\epsilon) \ge 2\epsilon \Delta$。
+
+**证明。** 由于距离函数和勒贝格测度在平移和旋转下是不变的（参见第一章第 3 节和第二章习题 4），我们可以通过这些运动适当的组合来变换情境。因此我们可以假定曲线的端点位于 $x$ 轴上，于是我们可以假定 $z(a) = (A, 0), z(b) = (B, 0)$，其中 $A < B$，并且 $\Delta = B - A$（在 $A=B$ 的情况下结论自动成立）。
+由函数 $x(t)$ 的连续性可知，对于每个 $x \in [A, B]$，存在一个值 $t \in [a, b]$，使得 $x = x(t)$。因为点 $Q = (x(t), y(t)) \in \Gamma$，集合 $\Gamma_\epsilon$ 包含了所有以 $Q$ 为中心、半径为 $\epsilon$ 的圆盘。
+
+---
+$^7$ 这是线性的 Minkowski 测度；变体见练习 28 以及下面第七章。
+
+> 4. 可求长曲线与等周不等式 139
+
+包含一段平行于 y 轴的线段，长度为 $2\varepsilon$，以 Q 为中心且位于 $x$ 上方。换句话说，切片 $(U_\varepsilon)_x$ 包含区间 $(y(t)-\varepsilon, y(t)+\varepsilon)$，从而 $m_1((U_\varepsilon)_x) \ge 2\varepsilon$（其中 $m_1$ 是一维勒贝格测度）。然而，根据富比尼定理
+$$
+m(U_\varepsilon) = \int_{\mathbb{R}} m_1((U_\varepsilon)_x) dx \ge \int_A^B m_1((U_\varepsilon)_x) dx \ge 2\varepsilon(B-A) = 2\varepsilon\delta;
+$$
+引理得证。
+
+
+现在我们要证明命题。让我们首先假设曲线是简单的。设 $P$ 为区间 $[a, b]$ 的任意分划 $a=t_0 < t_1 < \cdots < t_N=b$，并令 $L_P$ 表示相应折线的长度，即
+$$
+L_P = \sum_{j=1}^N |z(t_j) - z(t_{j-1})|.
+$$
+对于每个 $\varepsilon > 0$，映射 $t \mapsto z(t)$ 的连续性保证了存在 $N$ 个适当的闭子区间 $I_j = [a_j, b_j] \subset (t_{j-1}, t_j)$，使得
+$$
+\sum_{j=1}^N |z(b_j) - z(a_j)| \ge L_P - \varepsilon.
+$$
+令 $\gamma_j$ 表示由 $\gamma_j = \{z(t); t \in I_j\}$ 给出的曲线段。由于闭区间 $I_1, \dots, I_N$ 互不相交，由曲线的简单性可知紧集 $\gamma_1, \gamma_2, \dots, \gamma_N$ 互不相交。然而，$\gamma \subset \bigcup_{j=1}^N \gamma_j$ 且 $U_\varepsilon \supset \bigcup_{j=1}^N (\gamma_j)_\varepsilon$。此外，$\gamma_j$ 的不相交性意味着当 $\varepsilon$ 足够小时，集合 $(\gamma_j)_\varepsilon$ 也是不相交的。因此
+
+> 140 第 3 章 微分与积分
+
+对于这些 ε，前一个引理应用于每个 Γ_j 给出：
+$m(\Gamma_\varepsilon) \ge \sum_{j=1}^N m((\Gamma_j)_\varepsilon) \ge 2^\varepsilon \sum_{j} |z(b_j) - z(a_j)|.$
+因此，$m(\Gamma_\varepsilon) \ge 2^\varepsilon L(P) - \varepsilon^2$，取极限得
+$M^*(\Gamma) \le L(P) - \varepsilon^2.$ 由于该不等式对所有划分 $P$ 和所有 $\varepsilon > 0$ 都成立，它意味着该曲线是可求长的且其长度不超过 $M^*(\Gamma)$。
+
+当曲线仅仅是准简单（quasi-simple）时的证明是相似的，除了所考虑的划分 $P$ 必须进行细化，使其包含那些在其补集（在 $[a, b]$ 中）上映射 $t \mapsto z(t)$ 为单射的（有限多个）点作为划分点的点。细节留给读者处理。
+
+第二个命题是反方向的。
+
+如果 $\Gamma = \{z(t); a \le t \le b\}$ 是任意一条曲线，且 $\Delta = |z(b) - z(a)|$ 是其端点间的距离，那么 $m(\Gamma_\epsilon) \ge 2\epsilon \Delta$。
+
+**证明。** 由于距离函数和勒贝格测度在平移和旋转下是不变的（参见第一章第 3 节和第二章习题 4），我们可以通过这些运动适当的组合来变换情境。因此我们可以假定曲线的端点位于 $x$ 轴上，于是我们可以假定 $z(a) = (A, 0), z(b) = (B, 0)$，其中 $A < B$，并且 $\Delta = B - A$（在 $A=B$ 的情况下结论自动成立）。
+由函数 $x(t)$ 的连续性可知，对于每个 $x \in [A, B]$，存在一个值 $t \in [a, b]$，使得 $x = x(t)$。因为点 $Q = (x(t), y(t)) \in \Gamma$，集合 $\Gamma_\epsilon$ 包含了所有以 $Q$ 为中心、半径为 $\epsilon$ 的圆盘。
+
+---
+$^7$ 这是线性的 Minkowski 测度；变体见练习 28 以及下面第七章。
+
+> 4. 可求长曲线与等周不等式 139
+
+包含一段平行于 y 轴的线段，长度为 $2\varepsilon$，以 Q 为中心且位于 $x$ 上方。换句话说，切片 $(U_\varepsilon)_x$ 包含区间 $(y(t)-\varepsilon, y(t)+\varepsilon)$，从而 $m_1((U_\varepsilon)_x) \ge 2\varepsilon$（其中 $m_1$ 是一维勒贝格测度）。然而，根据富比尼定理
+$$
+m(U_\varepsilon) = \int_{\mathbb{R}} m_1((U_\varepsilon)_x) dx \ge \int_A^B m_1((U_\varepsilon)_x) dx \ge 2\varepsilon(B-A) = 2\varepsilon\delta;
+$$
+引理得证。
+
+
+现在我们要证明命题。让我们首先假设曲线是简单的。设 $P$ 为区间 $[a, b]$ 的任意分划 $a=t_0 < t_1 < \cdots < t_N=b$，并令 $L_P$ 表示相应折线的长度，即
+$$
+L_P = \sum_{j=1}^N |z(t_j) - z(t_{j-1})|.
+$$
+对于每个 $\varepsilon > 0$，映射 $t \mapsto z(t)$ 的连续性保证了存在 $N$ 个适当的闭子区间 $I_j = [a_j, b_j] \subset (t_{j-1}, t_j)$，使得
+$$
+\sum_{j=1}^N |z(b_j) - z(a_j)| \ge L_P - \varepsilon.
+$$
+令 $\gamma_j$ 表示由 $\gamma_j = \{z(t); t \in I_j\}$ 给出的曲线段。由于闭区间 $I_1, \dots, I_N$ 互不相交，由曲线的简单性可知紧集 $\gamma_1, \gamma_2, \dots, \gamma_N$ 互不相交。然而，$\gamma \subset \bigcup_{j=1}^N \gamma_j$ 且 $U_\varepsilon \supset \bigcup_{j=1}^N (\gamma_j)_\varepsilon$。此外，$\gamma_j$ 的不相交性意味着当 $\varepsilon$ 足够小时，集合 $(\gamma_j)_\varepsilon$ 也是不相交的。因此
+
+> 140 第 3 章 微分与积分
+
+对于这些 ε，前一个引理应用于每个 Γ_j 给出：
+$m(\Gamma_\varepsilon) \ge \sum_{j=1}^N m((\Gamma_j)_\varepsilon) \ge 2^\varepsilon \sum_{j} |z(b_j) - z(a_j)|.$
+因此，$m(\Gamma_\varepsilon) \ge 2^\varepsilon L(P) - \varepsilon^2$，取极限得
+$M^*(\Gamma) \le L(P) - \varepsilon^2.$ 由于该不等式对所有划分 $P$ 和所有 $\varepsilon > 0$ 都成立，它意味着该曲线是可求长的且其长度不超过 $M^*(\Gamma)$。
+
+当曲线仅仅是准简单（quasi-simple）时的证明是相似的，除了所考虑的划分 $P$ 必须进行细化，使其包含那些在其补集（在 $[a, b]$ 中）上映射 $t \mapsto z(t)$ 为单射的（有限多个）点作为划分点的点。细节留给读者处理。
+
+第二个命题是反方向的。
+

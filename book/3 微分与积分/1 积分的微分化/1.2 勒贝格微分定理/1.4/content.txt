@@ -1,0 +1,24 @@
+若 $f \in L^1_{loc}(\mathbb{R}^d)$，则
+$$ \lim_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B f(y) \, dy = f(x) $$
+对几乎所有的 $x$ 成立。
+
+该定理的第一个应用揭示了对可测集本质的一些有趣认识。如果 $E$ 是一个可测集且 $x \in \mathbb{R}^d$，我们称 $x$ 是 $E$ 的勒贝格密度点（Lebesgue density point），如果
+$$ \lim_{m(B) \to 0, x \in B} \frac{m(E \cap B)}{m(B)} = 1; $$
+粗略地说，这个条件意味着 $x$ 周围的小球几乎完全被 $E$ 覆盖。更精确地说，对于任意接近 1 的 $\alpha < 1$，以及每个包含 $x$ 且半径足够小的球 $B$，我们有
+$$ m(E \cap B) \ge \alpha m(B). $$
+因此 $E$ 覆盖了 $B$ 至少 $\alpha$ 的比例。
+
+将定理 1.4 应用于 $E$ 的特征函数，直接得到如下推论：
+
+若 $f \in L^1_{loc}(\mathbb{R}^d)$，则
+$$ \lim_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B f(y) \, dy = f(x) $$
+对几乎所有的 $x$ 成立。
+
+该定理的第一个应用揭示了对可测集本质的一些有趣认识。如果 $E$ 是一个可测集且 $x \in \mathbb{R}^d$，我们称 $x$ 是 $E$ 的勒贝格密度点（Lebesgue density point），如果
+$$ \lim_{m(B) \to 0, x \in B} \frac{m(E \cap B)}{m(B)} = 1; $$
+粗略地说，这个条件意味着 $x$ 周围的小球几乎完全被 $E$ 覆盖。更精确地说，对于任意接近 1 的 $\alpha < 1$，以及每个包含 $x$ 且半径足够小的球 $B$，我们有
+$$ m(E \cap B) \ge \alpha m(B). $$
+因此 $E$ 覆盖了 $B$ 至少 $\alpha$ 的比例。
+
+将定理 1.4 应用于 $E$ 的特征函数，直接得到如下推论：
+

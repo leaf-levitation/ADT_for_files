@@ -1,0 +1,92 @@
+若 $f$ 在 $\mathbb{R}^d$ 上可积，则
+$$ \lim_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B f(y) \, dy = f(x) \quad \text{对几乎所有 } x \text{ 成立。} $$
+
+**证明：** 我们只需证明对于每个 $\alpha > 0$，集合
+$$ E_\alpha = \left\{ x : \limsup_{m(B) \to 0, x \in B} \left| \frac{1}{m(B)} \int_B f(y) \, dy - f(x) \right| > 2\alpha \right\} $$
+的测度为零，因为如果该断言成立，则可保证集合 $E = \bigcap_{n=1}^\infty E_{1/n}$ 的测度为零，从而 (4) 中的极限在 $E^c$ 中的所有点处成立。
+
+我们固定 $\alpha$，并回顾第 2 章的定理 2.4，该定理指出对于每个 $\epsilon > 0$，我们可以选取一个具有紧支集的连续函数 $g$，使得 $\|f-g\|_{L^1(\mathbb{R}^d)} < \epsilon$。正如我们早先指出的，$g$ 的连续性意味着
+$$ \lim_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B g(y) \, dy = g(x) \quad \text{对所有 } x \text{ 成立。} $$
+由于我们可以将差值 $\frac{1}{m(B)}\int_B f(y) \, dy - f(x)$ 写为
+$$ \frac{1}{m(B)} \int_B (f(y)-g(y)) \, dy + \frac{1}{m(B)} \int_B g(y) \, dy - g(x) + g(x) - f(x) $$
+
+> 1. 积分的求导 105
+
+我们得到
+$$
+\limsup_{m(B)\to 0} \frac{1}{m(B)} \int_B |f(y) - f(x)| \, dy \le |(f-g)^\star(x)| + |g(x) - f(x)|;
+$$
+其中符号 $\star$ 表示极大函数。因此，如果
+$$
+F_\alpha = \{x : |(f-g)^\star(x)| > \alpha\} \quad \text{和} \quad G_\alpha = \{x : |f(x) - g(x)| > \alpha\},
+$$
+那么 $E_\alpha \subset F_\alpha \cup G_\alpha$，因为如果 $u_1$ 和 $u_2$ 为正数，则 $u_1 + u_2 > 2\alpha$ 仅当至少有一个 $u_i > \alpha$。一方面，由切比雪夫不等式可得
+$$
+m(G_\alpha) \le \frac{1}{\alpha} \|f-g\|_{L^1(\mathbb{R}^d)};
+$$
+另一方面，关于极大函数的弱型估计给出
+$$
+m(F_\alpha) \le \frac{A}{\alpha} \|f-g\|_{L^1(\mathbb{R}^d)}.
+$$
+选取函数 $g$ 使得 $\|f-g\|_{L^1(\mathbb{R}^d)} < \epsilon$。因此我们得到
+$$
+m(E_\alpha) \le \frac{A}{\alpha}\epsilon + \frac{1}{\alpha}\epsilon.
+$$
+由于 $\epsilon$ 是任意的，我们必须有 $m(E_\alpha) = 0$，至此定理得证。
+
+**注意**：作为应用于 $|f|$ 的该定理的直接推论，我们可以看出 $f^\star(x) \ge |f(x)|$ 对几乎所有 $x$ 成立，这里 $f^\star$ 是极大函数。
+
+到目前为止，我们在假定 $f$ 可积的前提下工作。这种“全局”假定在如可微性等“局部”概念的背景下显得有些不协调。事实上，勒贝格定理中的极限是在收缩到点 $x$ 的球上进行的，因此 $f$ 远离 $x$ 处的行为是不相关的。因此，如果我们仅假设 $f$ 在每个球上可积，我们希望结果仍然成立。
+
+为了明确这一点，我们称 $\mathbb{R}^d$ 上的一个可测函数 $f$ 是**局部可积**的，如果对于每个球 $B$，函数 $f(x)\chi_B(x)$ 都是可积的。我们将用 $L^1_{\text{loc}}(\mathbb{R}^d)$ 来表示所有局部可积函数的空间。通俗地说，无穷远处的行为不影响函数的局部可积性。例如，函数 $e^{|x|}$ 和 $|x|^{-1/2}$ 都是局部可积的，但在 $\mathbb{R}^d$ 上不可积。
+
+显然，最后一个定理的结论在较弱的假设即 $f$ 为局部可积的情况下依然成立。
+
+> 106 第 3 章 微分与积分
+
+若 $f$ 在 $\mathbb{R}^d$ 上可积，则
+$$ \lim_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B f(y) \, dy = f(x) \quad \text{对几乎所有 } x \text{ 成立。} $$
+
+**证明：** 我们只需证明对于每个 $\alpha > 0$，集合
+$$ E_\alpha = \left\{ x : \limsup_{m(B) \to 0, x \in B} \left| \frac{1}{m(B)} \int_B f(y) \, dy - f(x) \right| > 2\alpha \right\} $$
+的测度为零，因为如果该断言成立，则可保证集合 $E = \bigcap_{n=1}^\infty E_{1/n}$ 的测度为零，从而 (4) 中的极限在 $E^c$ 中的所有点处成立。
+
+我们固定 $\alpha$，并回顾第 2 章的定理 2.4，该定理指出对于每个 $\epsilon > 0$，我们可以选取一个具有紧支集的连续函数 $g$，使得 $\|f-g\|_{L^1(\mathbb{R}^d)} < \epsilon$。正如我们早先指出的，$g$ 的连续性意味着
+$$ \lim_{m(B) \to 0, x \in B} \frac{1}{m(B)} \int_B g(y) \, dy = g(x) \quad \text{对所有 } x \text{ 成立。} $$
+由于我们可以将差值 $\frac{1}{m(B)}\int_B f(y) \, dy - f(x)$ 写为
+$$ \frac{1}{m(B)} \int_B (f(y)-g(y)) \, dy + \frac{1}{m(B)} \int_B g(y) \, dy - g(x) + g(x) - f(x) $$
+
+> 1. 积分的求导 105
+
+我们得到
+$$
+\limsup_{m(B)\to 0} \frac{1}{m(B)} \int_B |f(y) - f(x)| \, dy \le |(f-g)^\star(x)| + |g(x) - f(x)|;
+$$
+其中符号 $\star$ 表示极大函数。因此，如果
+$$
+F_\alpha = \{x : |(f-g)^\star(x)| > \alpha\} \quad \text{和} \quad G_\alpha = \{x : |f(x) - g(x)| > \alpha\},
+$$
+那么 $E_\alpha \subset F_\alpha \cup G_\alpha$，因为如果 $u_1$ 和 $u_2$ 为正数，则 $u_1 + u_2 > 2\alpha$ 仅当至少有一个 $u_i > \alpha$。一方面，由切比雪夫不等式可得
+$$
+m(G_\alpha) \le \frac{1}{\alpha} \|f-g\|_{L^1(\mathbb{R}^d)};
+$$
+另一方面，关于极大函数的弱型估计给出
+$$
+m(F_\alpha) \le \frac{A}{\alpha} \|f-g\|_{L^1(\mathbb{R}^d)}.
+$$
+选取函数 $g$ 使得 $\|f-g\|_{L^1(\mathbb{R}^d)} < \epsilon$。因此我们得到
+$$
+m(E_\alpha) \le \frac{A}{\alpha}\epsilon + \frac{1}{\alpha}\epsilon.
+$$
+由于 $\epsilon$ 是任意的，我们必须有 $m(E_\alpha) = 0$，至此定理得证。
+
+**注意**：作为应用于 $|f|$ 的该定理的直接推论，我们可以看出 $f^\star(x) \ge |f(x)|$ 对几乎所有 $x$ 成立，这里 $f^\star$ 是极大函数。
+
+到目前为止，我们在假定 $f$ 可积的前提下工作。这种“全局”假定在如可微性等“局部”概念的背景下显得有些不协调。事实上，勒贝格定理中的极限是在收缩到点 $x$ 的球上进行的，因此 $f$ 远离 $x$ 处的行为是不相关的。因此，如果我们仅假设 $f$ 在每个球上可积，我们希望结果仍然成立。
+
+为了明确这一点，我们称 $\mathbb{R}^d$ 上的一个可测函数 $f$ 是**局部可积**的，如果对于每个球 $B$，函数 $f(x)\chi_B(x)$ 都是可积的。我们将用 $L^1_{\text{loc}}(\mathbb{R}^d)$ 来表示所有局部可积函数的空间。通俗地说，无穷远处的行为不影响函数的局部可积性。例如，函数 $e^{|x|}$ 和 $|x|^{-1/2}$ 都是局部可积的，但在 $\mathbb{R}^d$ 上不可积。
+
+显然，最后一个定理的结论在较弱的假设即 $f$ 为局部可积的情况下依然成立。
+
+> 106 第 3 章 微分与积分
+

@@ -1,0 +1,82 @@
+
+由于每个 $K_\epsilon$ 的积分为 1，我们可以宽泛地说当 $\epsilon \to 0$ 时 $K_\epsilon \to \delta$。如果我们考虑卷积 $f * \delta$ 为 $\int_{\mathbb{R}} f(x-y)\delta(y)dy$，那么乘积 $f(x-y)\delta(y)$ 仅在 $y=0$ 处不为 0，且 $\delta$ 的质量集中在 $y=0$ 处，因此我们直觉上可以期望：
+$$(f * \delta)(x) = f(x):$$
+由此可得 $f * \delta = f$，$\delta$ 扮演了卷积运算的单位角色。
+我们需要指出，上述讨论可以通过勒贝格 - 斯蒂尔切斯测度（Lebesgue-Stieltjes measures，我们在第 6 章讨论）或“广义函数”（即分布，我们将推迟到第四卷讨论）来形式化，并给出 $\delta$ 的精确定义。
+
+我们现在转向一系列关于恒等逼近的例子。
+
+**示例 1.** 假设 $\phi$ 是 $\mathbb{R}^d$ 上的一个非负有界函数，其支撑集为单位球 $\{x: |x| \le 1\}$，并且满足
+$$ \int_{\mathbb{R}^d} \phi = 1: $$
+那么，如果我们定义 $K_\epsilon(x) = \epsilon^{-d}\phi(\epsilon^{-1}x)$，族 $\{K_\epsilon\}_{\epsilon>0}$ 是一个恒等逼近。简单的验证留给读者。
+
+重要的特殊情况见接下来的两个示例。
+
+**示例 2.** 上半平面的泊松核由下式给出：
+$$ P_y(x) = \frac{1}{\pi} \frac{y}{x^2+y^2}; \quad x \in \mathbb{R}, $$
+其中参数现在为 $\epsilon = y > 0$。
+
+**示例 3.** $\mathbb{R}^d$ 中的热核定义为：
+$$ H_t(x) = \frac{1}{(4\pi t)^{d/2}} e^{-|x|^2/4t}. $$
+这里 $t > 0$，我们有 $\epsilon = t^{1/2}$。或者，我们可以设 $\epsilon = 4\pi t$ 以使符号与第 2 章中的特定用法保持一致。
+
+**示例 4.** 圆盘的泊松核为：
+$$ \frac{1}{2\pi} P_r(x) = \begin{cases} \frac{1}{2\pi} \frac{1-r^2}{1-2r\cos x+r^2} & \text{if } |x| \le \pi, \\ 0 & \text{if } |x| > \pi. \end{cases} $$
+
+> 112 第 3 章 微分与积分
+
+此处我们有 $0 < r < 1$ 且 $\alpha = 1/r$。
+
+例 5. 费耶尔核（Fejér kernel）定义为
+$$
+\frac{1}{2\pi}F_N(x) = \begin{cases}
+\frac{1}{2\pi N}\frac{\sin^2(Nx/2)}{\sin^2(x/2)} & \text{若 } |x| \leq \pi \\
+0 & \text{若 } |x| > \pi
+\end{cases}
+$$
+其中 $\alpha = 1/N$。
+
+我们注意到，例 2 至例 5 已经出现在《第一卷》中。
+现在我们要转向关于逼近单位元的一般性结论，该结论突出了勒贝格集（Lebesgue set）的作用。
+
+
+由于每个 $K_\epsilon$ 的积分为 1，我们可以宽泛地说当 $\epsilon \to 0$ 时 $K_\epsilon \to \delta$。如果我们考虑卷积 $f * \delta$ 为 $\int_{\mathbb{R}} f(x-y)\delta(y)dy$，那么乘积 $f(x-y)\delta(y)$ 仅在 $y=0$ 处不为 0，且 $\delta$ 的质量集中在 $y=0$ 处，因此我们直觉上可以期望：
+$$(f * \delta)(x) = f(x):$$
+由此可得 $f * \delta = f$，$\delta$ 扮演了卷积运算的单位角色。
+我们需要指出，上述讨论可以通过勒贝格 - 斯蒂尔切斯测度（Lebesgue-Stieltjes measures，我们在第 6 章讨论）或“广义函数”（即分布，我们将推迟到第四卷讨论）来形式化，并给出 $\delta$ 的精确定义。
+
+我们现在转向一系列关于恒等逼近的例子。
+
+**示例 1.** 假设 $\phi$ 是 $\mathbb{R}^d$ 上的一个非负有界函数，其支撑集为单位球 $\{x: |x| \le 1\}$，并且满足
+$$ \int_{\mathbb{R}^d} \phi = 1: $$
+那么，如果我们定义 $K_\epsilon(x) = \epsilon^{-d}\phi(\epsilon^{-1}x)$，族 $\{K_\epsilon\}_{\epsilon>0}$ 是一个恒等逼近。简单的验证留给读者。
+
+重要的特殊情况见接下来的两个示例。
+
+**示例 2.** 上半平面的泊松核由下式给出：
+$$ P_y(x) = \frac{1}{\pi} \frac{y}{x^2+y^2}; \quad x \in \mathbb{R}, $$
+其中参数现在为 $\epsilon = y > 0$。
+
+**示例 3.** $\mathbb{R}^d$ 中的热核定义为：
+$$ H_t(x) = \frac{1}{(4\pi t)^{d/2}} e^{-|x|^2/4t}. $$
+这里 $t > 0$，我们有 $\epsilon = t^{1/2}$。或者，我们可以设 $\epsilon = 4\pi t$ 以使符号与第 2 章中的特定用法保持一致。
+
+**示例 4.** 圆盘的泊松核为：
+$$ \frac{1}{2\pi} P_r(x) = \begin{cases} \frac{1}{2\pi} \frac{1-r^2}{1-2r\cos x+r^2} & \text{if } |x| \le \pi, \\ 0 & \text{if } |x| > \pi. \end{cases} $$
+
+> 112 第 3 章 微分与积分
+
+此处我们有 $0 < r < 1$ 且 $\alpha = 1/r$。
+
+例 5. 费耶尔核（Fejér kernel）定义为
+$$
+\frac{1}{2\pi}F_N(x) = \begin{cases}
+\frac{1}{2\pi N}\frac{\sin^2(Nx/2)}{\sin^2(x/2)} & \text{若 } |x| \leq \pi \\
+0 & \text{若 } |x| > \pi
+\end{cases}
+$$
+其中 $\alpha = 1/N$。
+
+我们注意到，例 2 至例 5 已经出现在《第一卷》中。
+现在我们要转向关于逼近单位元的一般性结论，该结论突出了勒贝格集（Lebesgue set）的作用。
+

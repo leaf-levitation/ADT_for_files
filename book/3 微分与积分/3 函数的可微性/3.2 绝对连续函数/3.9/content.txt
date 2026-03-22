@@ -1,0 +1,34 @@
+引理
+
+设 $E$ 是具有有限测度的集合，$\mathcal{B}$ 是 $E$ 的维塔利覆盖。对于任意 $\delta > 0$，我们可以找到 $\mathcal{B}$ 中有限多个互不相交的球 $B_1, \dots, B_N$，使得
+$$ \sum_{i=1}^N m(B_i) \geq m(E) - \delta $$
+
+证明。我们反复应用初等的引理 1.2，旨在穷尽集合 $E$。取 $\delta$ 足够小即足以满足要求，例如 $\delta < m(E)$。利用刚才引用的覆盖引理，我们可以找到 $\mathcal{B}$ 中的一组初始互不相交球 $B_1, B_2, \dots, B_{N_1}$，使得 $\sum_{i=1}^{N_1} m(B_i) \geq \alpha \delta$。（为简化符号，我们记 $\alpha = 3^{-d}$。）确实，对于 $E$ 的某个合适的紧致子集 $E_0$，首先有 $m(E_0) \geq \delta$。由于 $E_0$ 的紧致性，我们可以用 $\mathcal{B}$ 中的有限多个球覆盖它，然后前面的引理允许我们从这些球中选择出一个互不相交的子集 $B_1, B_2, \dots, B_{N_1}$，使得 $\sum_{i=1}^{N_1} m(B_i) \geq \alpha m(E_0) \geq \alpha \delta$。
+
+以 $B_1, \dots, B_{N_1}$ 作为我们的初始球序列，我们考虑两种可能性：要么 $\sum_{i=1}^{N_1} m(B_i) \geq m(E) - \delta$，此时我们就完成了，令 $N =$
+
+> 3. 函数的可微性 129
+
+$N_1$；或者反过来说，$\sum_{i=1}^{N_1} m(B_i) < m(E) - \varepsilon$。在第二种情况下，取 $E_2 = E \setminus \bigcup_{i=1}^{N_1} B_i$，我们有 $m(E_2) > \varepsilon$（回顾一下 $m(B_i) = m(B_i)$）。于是我们重复之前的论证，选取 $E_2$ 的一个紧致子集 $E'_2$ 满足 $m(E'_2) \ge \varepsilon$，并注意 $\mathcal{B}$ 中与 $\bigcup_{i=1}^{N_1} B_i$ 不相交的球仍然覆盖了 $E_2$，事实上给出了 $E_2$ 的一个维塔利覆盖（进而也是 $E'_2$ 的一个维塔利覆盖）。因此我们可以从这些球中选择一组有限的不相交的球 $B_i$ ($N_1 < i \le N_2$)，使得 $\sum_{N_1 < i \le N_2} m(B_i) \ge \varepsilon$。因此，此时 $\sum_{i=1}^{N_2} m(B_i) \ge 2\varepsilon$，且球 $B_i$ ($1 \le i \le N_2$) 互不相交。
+
+我们再次考虑两种情形，即是否 $\sum_{i=1}^{N_2} m(B_i) \ge m(E) - \varepsilon$。在第一种情况下，我们在 $N_2 = N$ 处结束；在第二种情况下，我们像之前一样继续。如果这样继续进行，我们在第 $k$ 步仍未停止，则我们会选出一组不相交的球，其测度之和至少为 $k\varepsilon$。无论如何，只要 $k \ge (m(E) - \varepsilon)/\varepsilon$，我们的过程就在第 $k$ 步达到了目标，因为在这种情况下 $\sum_{i=1}^{N_k} m(B_i) \ge m(E) - \varepsilon$。
+
+一个简单的推论如下。
+
+引理
+
+设 $E$ 是具有有限测度的集合，$\mathcal{B}$ 是 $E$ 的维塔利覆盖。对于任意 $\delta > 0$，我们可以找到 $\mathcal{B}$ 中有限多个互不相交的球 $B_1, \dots, B_N$，使得
+$$ \sum_{i=1}^N m(B_i) \geq m(E) - \delta $$
+
+证明。我们反复应用初等的引理 1.2，旨在穷尽集合 $E$。取 $\delta$ 足够小即足以满足要求，例如 $\delta < m(E)$。利用刚才引用的覆盖引理，我们可以找到 $\mathcal{B}$ 中的一组初始互不相交球 $B_1, B_2, \dots, B_{N_1}$，使得 $\sum_{i=1}^{N_1} m(B_i) \geq \alpha \delta$。（为简化符号，我们记 $\alpha = 3^{-d}$。）确实，对于 $E$ 的某个合适的紧致子集 $E_0$，首先有 $m(E_0) \geq \delta$。由于 $E_0$ 的紧致性，我们可以用 $\mathcal{B}$ 中的有限多个球覆盖它，然后前面的引理允许我们从这些球中选择出一个互不相交的子集 $B_1, B_2, \dots, B_{N_1}$，使得 $\sum_{i=1}^{N_1} m(B_i) \geq \alpha m(E_0) \geq \alpha \delta$。
+
+以 $B_1, \dots, B_{N_1}$ 作为我们的初始球序列，我们考虑两种可能性：要么 $\sum_{i=1}^{N_1} m(B_i) \geq m(E) - \delta$，此时我们就完成了，令 $N =$
+
+> 3. 函数的可微性 129
+
+$N_1$；或者反过来说，$\sum_{i=1}^{N_1} m(B_i) < m(E) - \varepsilon$。在第二种情况下，取 $E_2 = E \setminus \bigcup_{i=1}^{N_1} B_i$，我们有 $m(E_2) > \varepsilon$（回顾一下 $m(B_i) = m(B_i)$）。于是我们重复之前的论证，选取 $E_2$ 的一个紧致子集 $E'_2$ 满足 $m(E'_2) \ge \varepsilon$，并注意 $\mathcal{B}$ 中与 $\bigcup_{i=1}^{N_1} B_i$ 不相交的球仍然覆盖了 $E_2$，事实上给出了 $E_2$ 的一个维塔利覆盖（进而也是 $E'_2$ 的一个维塔利覆盖）。因此我们可以从这些球中选择一组有限的不相交的球 $B_i$ ($N_1 < i \le N_2$)，使得 $\sum_{N_1 < i \le N_2} m(B_i) \ge \varepsilon$。因此，此时 $\sum_{i=1}^{N_2} m(B_i) \ge 2\varepsilon$，且球 $B_i$ ($1 \le i \le N_2$) 互不相交。
+
+我们再次考虑两种情形，即是否 $\sum_{i=1}^{N_2} m(B_i) \ge m(E) - \varepsilon$。在第一种情况下，我们在 $N_2 = N$ 处结束；在第二种情况下，我们像之前一样继续。如果这样继续进行，我们在第 $k$ 步仍未停止，则我们会选出一组不相交的球，其测度之和至少为 $k\varepsilon$。无论如何，只要 $k \ge (m(E) - \varepsilon)/\varepsilon$，我们的过程就在第 $k$ 步达到了目标，因为在这种情况下 $\sum_{i=1}^{N_k} m(B_i) \ge m(E) - \varepsilon$。
+
+一个简单的推论如下。
+

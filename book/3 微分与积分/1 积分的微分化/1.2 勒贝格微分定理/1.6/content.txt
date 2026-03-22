@@ -1,0 +1,32 @@
+若 $f$ 在 $\mathbb{R}^d$ 上局部可积，则几乎所有点都属于 $f$ 的勒贝格集。
+
+> 1. 积分的微分 107
+
+证明 . 将定理 1.4 应用于函数 $|f(y) - r|$ 可知，对于每个有理数 $r$，存在一个零测集 $E_r$，使得
+$$ \lim_{\substack{m(B) \to 0 \\ x \in B}} \frac{1}{m(B)} \int_B |f(y) - r| \, dy = |f(x) - r| $$
+只要 $x \notin E_r$。
+
+如果 $E = \bigcup_{r \in \mathbb{Q}} E_r$，则 $m(E) = 0$。现在假设 $x \notin E$ 且 $f(x)$ 为有限值。给定 $\epsilon > 0$，存在有理数 $r$ 使得 $|f(x) - r| < \epsilon$。
+
+由于
+$$ \frac{1}{m(B)} \int_B |f(y) - f(x)| \, dy \le \frac{1}{m(B)} \int_B |f(y) - r| \, dy + |f(x) - r|, $$
+我们必有
+$$ \limsup_{\substack{m(B) \to 0 \\ x \in B}} \frac{1}{m(B)} \int_B |f(y) - f(x)| \, dy \le 2\epsilon; $$
+因此 $x$ 属于 $f$ 的 Lebesgue 集。从而该推论得证。
+
+若 $f$ 在 $\mathbb{R}^d$ 上局部可积，则几乎所有点都属于 $f$ 的勒贝格集。
+
+> 1. 积分的微分 107
+
+证明 . 将定理 1.4 应用于函数 $|f(y) - r|$ 可知，对于每个有理数 $r$，存在一个零测集 $E_r$，使得
+$$ \lim_{\substack{m(B) \to 0 \\ x \in B}} \frac{1}{m(B)} \int_B |f(y) - r| \, dy = |f(x) - r| $$
+只要 $x \notin E_r$。
+
+如果 $E = \bigcup_{r \in \mathbb{Q}} E_r$，则 $m(E) = 0$。现在假设 $x \notin E$ 且 $f(x)$ 为有限值。给定 $\epsilon > 0$，存在有理数 $r$ 使得 $|f(x) - r| < \epsilon$。
+
+由于
+$$ \frac{1}{m(B)} \int_B |f(y) - f(x)| \, dy \le \frac{1}{m(B)} \int_B |f(y) - r| \, dy + |f(x) - r|, $$
+我们必有
+$$ \limsup_{\substack{m(B) \to 0 \\ x \in B}} \frac{1}{m(B)} \int_B |f(y) - f(x)| \, dy \le 2\epsilon; $$
+因此 $x$ 属于 $f$ 的 Lebesgue 集。从而该推论得证。
+

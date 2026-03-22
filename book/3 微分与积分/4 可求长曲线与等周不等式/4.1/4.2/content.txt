@@ -1,0 +1,80 @@
+设 $F$ 在 $[a, b]$ 上是复值且绝对连续的。则
+
+$V_{a}^{b}(F) = \int_a^b |F'(t)| \, dt.$
+
+> 4. 可求长曲线与等周不等式 135
+
+事实上，由于定理 3.11，对于 $[a, b]$ 的任意分割 $a = t_0 < t_1 < \cdots < t_N = b$，我们有
+
+$$ \sum_{j=1}^N |F(t_j) - F(t_{j-1})| = \sum_{j=1}^N \left| \int_{t_{j-1}}^{t_j} F'(t) dt \right| \leqslant \sum_{j=1}^N \int_{t_{j-1}}^{t_j} |F'(t)| dt = \int_a^b |F'(t)| dt $$
+
+因此这证明了
+
+(13) $T_F(a, b) \leqslant \int_a^b |F'(t)| dt$ 。
+
+为了证明反向不等式，令 $\epsilon > 0$，并利用第 2 章中的定理 2.4，在 $[a, b]$ 上找一个阶梯函数 $g$，使得 $F' = g + h$ 且 $\int_a^b |h(t)| dt < \epsilon$。设 $G(x) = \int_a^x g(t) dt$，且 $H(x) = \int_a^x h(t) dt$。则 $F = G + H$，且容易看出
+
+$$ T_F(a, b) \geqslant T_G(a, b) - T_H(a, b) $$
+
+然而，由 (13) 知 $T_H(a, b) < \epsilon$，故有
+
+$$ T_F(a, b) \geqslant T_G(a, b) - \epsilon $$
+
+现在对区间 $[a, b]$ 进行分割，设 $a = t_0 < \cdots < t_N = b$，使得阶梯函数 $g$ 在每个区间 $(t_{j-1}, t_j)$ ($j = 1, 2, \dots, N$) 上为常数。那么
+
+$$ T_G(a, b) \geqslant \sum_{j=1}^N |G(t_j) - G(t_{j-1})| $$
+
+$$ = \sum_{j=1}^N \left| \int_{t_{j-1}}^{t_j} g(t) dt \right| $$
+
+$$ = \sum_{j=1}^N \int_{t_{j-1}}^{t_j} |g(t)| dt $$
+
+$$ = \int_a^b |g(t)| dt $$
+
+> 136 第 3 章 微分与积分
+
+由于 $\int_a^b |g(t)| dt \ge \int_a^b |F'(t)| dt - \varepsilon^2$，由此我们得到
+$TF(a; b) \ge \int_a^b |F'(t)| dt - 2\varepsilon$；
+令 $\varepsilon \to 0$，我们确立了该断言同时也证明了定理。
+
+现在，任何曲线（视作映射 $t \mapsto z(t)$ 的像）实际上可以由许多不同的参数化来实现。然而，对于一条可求长曲线，与其关联的唯一自然参数化是弧长参数化。事实上，设 $L(A; B)$ 表示长度函数（见 3.1 节），并对于 $[a; b]$ 中的变量 $t$，设 $s(t) = L(a; t)$。那么 $s(t)$（即弧长）是一个连续递增函数，它将 $[a; b]$ 映射到 $[0; L]$，其中 $L$ 是曲线的长度。曲线的弧长参数化现由对 $(\tilde{z}(s) = \tilde{x}(s) + i\tilde{y}(s))$ 给出，其中当 $s = s(t)$ 时 $\tilde{z}(s) = z(t)$。注意通过这种方式，函数 $\tilde{z}(s)$ 在 $[0; L]$ 上是良定义的，因为如果 $s(t_1) = s(t_2)$ 且 $t_1 < t_2$，那么实际上 $z(t)$ 在区间 $[t_1; t_2]$ 上不发生变化，因此 $z(t_1) = z(t_2)$。此外，对于所有对 $s_1, s_2 \in [0; L]$，有 $|\tilde{z}(s_1) - \tilde{z}(s_2)| \le |s_1 - s_2|$，因为不等式左边是曲线上两点间的距离，而右边是连接这两点的曲线段的长度。而且，当 $s$ 从 0 变到 $L$ 时，$\tilde{z}(s)$ 描出的点（按相同顺序）与 $t$ 从 $a$ 变到 $b$ 时 $z(t)$ 描出的点相同。
+
+设 $F$ 在 $[a, b]$ 上是复值且绝对连续的。则
+
+$V_{a}^{b}(F) = \int_a^b |F'(t)| \, dt.$
+
+> 4. 可求长曲线与等周不等式 135
+
+事实上，由于定理 3.11，对于 $[a, b]$ 的任意分割 $a = t_0 < t_1 < \cdots < t_N = b$，我们有
+
+$$ \sum_{j=1}^N |F(t_j) - F(t_{j-1})| = \sum_{j=1}^N \left| \int_{t_{j-1}}^{t_j} F'(t) dt \right| \leqslant \sum_{j=1}^N \int_{t_{j-1}}^{t_j} |F'(t)| dt = \int_a^b |F'(t)| dt $$
+
+因此这证明了
+
+(13) $T_F(a, b) \leqslant \int_a^b |F'(t)| dt$ 。
+
+为了证明反向不等式，令 $\epsilon > 0$，并利用第 2 章中的定理 2.4，在 $[a, b]$ 上找一个阶梯函数 $g$，使得 $F' = g + h$ 且 $\int_a^b |h(t)| dt < \epsilon$。设 $G(x) = \int_a^x g(t) dt$，且 $H(x) = \int_a^x h(t) dt$。则 $F = G + H$，且容易看出
+
+$$ T_F(a, b) \geqslant T_G(a, b) - T_H(a, b) $$
+
+然而，由 (13) 知 $T_H(a, b) < \epsilon$，故有
+
+$$ T_F(a, b) \geqslant T_G(a, b) - \epsilon $$
+
+现在对区间 $[a, b]$ 进行分割，设 $a = t_0 < \cdots < t_N = b$，使得阶梯函数 $g$ 在每个区间 $(t_{j-1}, t_j)$ ($j = 1, 2, \dots, N$) 上为常数。那么
+
+$$ T_G(a, b) \geqslant \sum_{j=1}^N |G(t_j) - G(t_{j-1})| $$
+
+$$ = \sum_{j=1}^N \left| \int_{t_{j-1}}^{t_j} g(t) dt \right| $$
+
+$$ = \sum_{j=1}^N \int_{t_{j-1}}^{t_j} |g(t)| dt $$
+
+$$ = \int_a^b |g(t)| dt $$
+
+> 136 第 3 章 微分与积分
+
+由于 $\int_a^b |g(t)| dt \ge \int_a^b |F'(t)| dt - \varepsilon^2$，由此我们得到
+$TF(a; b) \ge \int_a^b |F'(t)| dt - 2\varepsilon$；
+令 $\varepsilon \to 0$，我们确立了该断言同时也证明了定理。
+
+现在，任何曲线（视作映射 $t \mapsto z(t)$ 的像）实际上可以由许多不同的参数化来实现。然而，对于一条可求长曲线，与其关联的唯一自然参数化是弧长参数化。事实上，设 $L(A; B)$ 表示长度函数（见 3.1 节），并对于 $[a; b]$ 中的变量 $t$，设 $s(t) = L(a; t)$。那么 $s(t)$（即弧长）是一个连续递增函数，它将 $[a; b]$ 映射到 $[0; L]$，其中 $L$ 是曲线的长度。曲线的弧长参数化现由对 $(\tilde{z}(s) = \tilde{x}(s) + i\tilde{y}(s))$ 给出，其中当 $s = s(t)$ 时 $\tilde{z}(s) = z(t)$。注意通过这种方式，函数 $\tilde{z}(s)$ 在 $[0; L]$ 上是良定义的，因为如果 $s(t_1) = s(t_2)$ 且 $t_1 < t_2$，那么实际上 $z(t)$ 在区间 $[t_1; t_2]$ 上不发生变化，因此 $z(t_1) = z(t_2)$。此外，对于所有对 $s_1, s_2 \in [0; L]$，有 $|\tilde{z}(s_1) - \tilde{z}(s_2)| \le |s_1 - s_2|$，因为不等式左边是曲线上两点间的距离，而右边是连接这两点的曲线段的长度。而且，当 $s$ 从 0 变到 $L$ 时，$\tilde{z}(s)$ 描出的点（按相同顺序）与 $t$ 从 $a$ 变到 $b$ 时 $z(t)$ 描出的点相同。
+

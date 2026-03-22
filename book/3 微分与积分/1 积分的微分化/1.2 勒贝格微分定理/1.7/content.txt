@@ -1,0 +1,20 @@
+
+假设 $f$ 是 $\mathbb{R}^d$ 上的局部可积函数。若集合族 $\{U_j\}$ 在 $x$ 处正则收缩，则对于 $f$ 的勒贝格集中的每一点 $x$，有
+$$
+\lim_{\substack{m(U_j) \to 0 \\ x \in U_j}} \frac{1}{m(U_j)} \int_{U_j} f(y) dy = f(x)
+$$
+证明是直接的，因为一旦我们观察到当 $x \in B$ 且 $U_j \subset B$, $m(U_j) \ge c m(B)$ 时，
+$$
+\frac{1}{m(U_j)} \int_{U_j} |f(y) - f(x)| dy \le \frac{1}{c m(B)} \int_{B} |f(y) - f(x)| dy
+$$
+
+
+假设 $f$ 是 $\mathbb{R}^d$ 上的局部可积函数。若集合族 $\{U_j\}$ 在 $x$ 处正则收缩，则对于 $f$ 的勒贝格集中的每一点 $x$，有
+$$
+\lim_{\substack{m(U_j) \to 0 \\ x \in U_j}} \frac{1}{m(U_j)} \int_{U_j} f(y) dy = f(x)
+$$
+证明是直接的，因为一旦我们观察到当 $x \in B$ 且 $U_j \subset B$, $m(U_j) \ge c m(B)$ 时，
+$$
+\frac{1}{m(U_j)} \int_{U_j} |f(y) - f(x)| dy \le \frac{1}{c m(B)} \int_{B} |f(y) - f(x)| dy
+$$
+

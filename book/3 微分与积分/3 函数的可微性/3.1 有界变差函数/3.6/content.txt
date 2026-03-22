@@ -1,0 +1,116 @@
+
+假设 G 是闭区间 $[a, b]$ 上的实值连续函数。若 $E$ 表示 $(a, b)$ 中满足存在某个 $h > 0$ 使得 $G(x+h) > G(x)$ 的点 $x$ 的集合，则 $E$ 或者是空集，或者是开集。在后一种情况下，它是可数个互不相交的区间 $(a_k, b_k)$ 的不交并，且 $G(a_k) = G(b_k)$，除非可能有 $a = a_k$，此时我们仅有 $G(a_k) ≤ G(b_k)$。
+
+对于定理的证明，我们定义量
+$Δ_h F(x) = (F(x+h) - F(x))/h$
+
+> 3. 函数的可微性 123
+
+我们还考虑由以下公式定义的四个达利（Dini）数：
+$$
+\begin{aligned}
+D^+(F)(x) &= \limsup_{h \to 0, \, h > 0} \frac{F(x+h)-F(x)}{h}, \\
+D_+(F)(x) &= \liminf_{h \to 0, \, h > 0} \frac{F(x+h)-F(x)}{h}, \\
+D^-(F)(x) &= \limsup_{h \to 0, \, h < 0} \frac{F(x+h)-F(x)}{h}, \\
+D_-(F)(x) &= \liminf_{h \to 0, \, h < 0} \frac{F(x+h)-F(x)}{h}.
+\end{aligned}
+$$
+显然，我们有 $D^+ \leq D_+$ 且 $D^- \leq D_-$。为了证明该定理，只需证明：
+(i) 对几乎所有的 $x$，$D^+(F)(x) < \infty$；并且
+(ii) 对几乎所有的 $x$，$D_+(F)(x) \leq D^-(F)(x)$。
+实际上，如果这些结论成立，那么通过将其应用于 $-F(-x)$ 而不是 $F(x)$，我们得到对几乎所有的 $x$，$D_-(F)(x) \leq D^-(F)(x)$。因此，$D^+ \leq D_- \leq D^+ \leq D^+ < \infty$（此处应理解为所有四个达利数在几乎处处有限）。
+因此，在所有四个达利数在几乎处处相等，从而对所有几乎每点 $x$，$F'(x)$ 存在。
+
+我们要回顾假设 $F$ 在 $[a, b]$ 上是单调递增、有界且连续的。对于固定的 $\alpha > 0$，令
+$$ E_\alpha = \{ x : D^+(F)(x) > \alpha \}. $$
+首先，我们断言 $E_\alpha$ 是可测的。（这个简单事实的证明在练习 14 中概述。）接下来，我们将推论 3.6 应用于函数 $G(x) = F(x) - \alpha x$，并注意此时我们有 $E_\alpha \subset \bigcup_k (a_k, b_k)$，其中满足 $F(b_k) - F(a_k) \geq \alpha(b_k - a_k)$。因此，
+$$ m(E_\alpha) \leq \sum_k m((a_k, b_k)) \leq \frac{1}{\alpha} \sum_k (F(b_k) - F(a_k)) \leq \frac{1}{\alpha}(F(b) - F(a)). $$
+因此当 $\alpha \to \infty$ 时，$m(E_\alpha) \to 0$，并且由于对于所有的 $\alpha$，$\{ D^+F(x) < 1 \} \subset E_\alpha$，这证明了 $D^+F(x) < \infty$ 几乎处处成立。
+
+> 124 第 3 章 微分与积分
+
+取定满足 $R > r$ 的实数 $r$ 和 $R$，令
+$$ E=\{x \in [a, b]: D^+ F(x)>R \text{ 且 } r>D^- F(x)\}. $$
+一旦证明了 $m(E) = 0$，我们就说明了几乎处处有 $D^+ F(x) \le D^- F(x)$，因为接下来只需令 $R$ 和 $r$ 在有理数中变化且满足 $R > r$ 即可。
+
+为了证明 $m(E) = 0$，我们可以假设 $m(E)>0$ 并导出矛盾。由于 $R/r > 1$，我们可以找到一个开集 $O$ 使得 $E \subseteq O \subseteq (a, b)$，且 $m(O)< m(E) \cdot R/r$。
+
+现在 $O$ 可以写成 $\bigcup I_n$，其中 $I_n$ 是不相交的开区间。固定 $n$ 并对函数 $G(x)=-F(-x)+rx$ 在区间 $I_n$ 上应用推论 3.6。再次通过原点对称反射可得一个包含在 $I_n$ 中的开集 $\bigcup (a_k, b_k)$，其中区间 $(a_k, b_k)$ 互不相交，且满足
+$$ F(b_k)-F(a_k) \le r(b_k-a_k); $$
+然而，在每个区间 $(a_k, b_k)$ 上我们再次应用推论 3.6，这次针对函数 $G(x)=F(x)-Rx$。于是我们得到由互不相交的开区间 $(a_{k,j}, b_{k,j})$ 组成的开集 $O_n=\bigcup_{k,j}(a_{k,j}, b_{k,j})$，对于每个 $j$ 都有 $(a_{k,j}, b_{k,j}) \subseteq (a_k, b_k)$，且满足
+$$ F(b_{k,j})-F(a_{k,j}) \ge R(b_{k,j}-a_{k,j}). $$
+然后利用 $F$ 是递增函数的性质，我们发现
+$$
+\begin{aligned}
+m(O_n) &= \sum_{k,j}(b_{k,j}-a_{k,j}) \\
+&\le \frac{1}{R} \sum_{k,j}F(b_{k,j})-F(a_{k,j}) \\
+&\le \frac{1}{R} \sum_{k}F(b_k)-F(a_k) \\
+&\le \frac{r}{R} \sum_{k}(b_k-a_k) \\
+&\le \frac{r}{R} m(I_n).
+\end{aligned}
+$$
+注意到 $O_n \supseteq E \cap I_n$，因为对于每个 $x \in E$，都有 $D^+ F(x) > R$ 和 $r > D^- F(x)$；当然 $I_n \subseteq O$。我们现在对 $n$ 求和。因此
+$$ m(E) = \sum_{n} m(E \cap I_n) \le \sum_{n} m(O_n) \le \frac{r}{R} \sum_{n} m(I_n) = \frac{r}{R} m(O) < m(E). $$
+该严格不等式给出了矛盾，从而证明了定理 3.4，至少当 $F$ 是连续函数时成立。
+让我们看看如果 $F$ 是一个单调函数，我们在 (6) 方面取得了多大的进展。
+
+> 3. Differentiability of functions 125
+
+
+假设 G 是闭区间 $[a, b]$ 上的实值连续函数。若 $E$ 表示 $(a, b)$ 中满足存在某个 $h > 0$ 使得 $G(x+h) > G(x)$ 的点 $x$ 的集合，则 $E$ 或者是空集，或者是开集。在后一种情况下，它是可数个互不相交的区间 $(a_k, b_k)$ 的不交并，且 $G(a_k) = G(b_k)$，除非可能有 $a = a_k$，此时我们仅有 $G(a_k) ≤ G(b_k)$。
+
+对于定理的证明，我们定义量
+$Δ_h F(x) = (F(x+h) - F(x))/h$
+
+> 3. 函数的可微性 123
+
+我们还考虑由以下公式定义的四个达利（Dini）数：
+$$
+\begin{aligned}
+D^+(F)(x) &= \limsup_{h \to 0, \, h > 0} \frac{F(x+h)-F(x)}{h}, \\
+D_+(F)(x) &= \liminf_{h \to 0, \, h > 0} \frac{F(x+h)-F(x)}{h}, \\
+D^-(F)(x) &= \limsup_{h \to 0, \, h < 0} \frac{F(x+h)-F(x)}{h}, \\
+D_-(F)(x) &= \liminf_{h \to 0, \, h < 0} \frac{F(x+h)-F(x)}{h}.
+\end{aligned}
+$$
+显然，我们有 $D^+ \leq D_+$ 且 $D^- \leq D_-$。为了证明该定理，只需证明：
+(i) 对几乎所有的 $x$，$D^+(F)(x) < \infty$；并且
+(ii) 对几乎所有的 $x$，$D_+(F)(x) \leq D^-(F)(x)$。
+实际上，如果这些结论成立，那么通过将其应用于 $-F(-x)$ 而不是 $F(x)$，我们得到对几乎所有的 $x$，$D_-(F)(x) \leq D^-(F)(x)$。因此，$D^+ \leq D_- \leq D^+ \leq D^+ < \infty$（此处应理解为所有四个达利数在几乎处处有限）。
+因此，在所有四个达利数在几乎处处相等，从而对所有几乎每点 $x$，$F'(x)$ 存在。
+
+我们要回顾假设 $F$ 在 $[a, b]$ 上是单调递增、有界且连续的。对于固定的 $\alpha > 0$，令
+$$ E_\alpha = \{ x : D^+(F)(x) > \alpha \}. $$
+首先，我们断言 $E_\alpha$ 是可测的。（这个简单事实的证明在练习 14 中概述。）接下来，我们将推论 3.6 应用于函数 $G(x) = F(x) - \alpha x$，并注意此时我们有 $E_\alpha \subset \bigcup_k (a_k, b_k)$，其中满足 $F(b_k) - F(a_k) \geq \alpha(b_k - a_k)$。因此，
+$$ m(E_\alpha) \leq \sum_k m((a_k, b_k)) \leq \frac{1}{\alpha} \sum_k (F(b_k) - F(a_k)) \leq \frac{1}{\alpha}(F(b) - F(a)). $$
+因此当 $\alpha \to \infty$ 时，$m(E_\alpha) \to 0$，并且由于对于所有的 $\alpha$，$\{ D^+F(x) < 1 \} \subset E_\alpha$，这证明了 $D^+F(x) < \infty$ 几乎处处成立。
+
+> 124 第 3 章 微分与积分
+
+取定满足 $R > r$ 的实数 $r$ 和 $R$，令
+$$ E=\{x \in [a, b]: D^+ F(x)>R \text{ 且 } r>D^- F(x)\}. $$
+一旦证明了 $m(E) = 0$，我们就说明了几乎处处有 $D^+ F(x) \le D^- F(x)$，因为接下来只需令 $R$ 和 $r$ 在有理数中变化且满足 $R > r$ 即可。
+
+为了证明 $m(E) = 0$，我们可以假设 $m(E)>0$ 并导出矛盾。由于 $R/r > 1$，我们可以找到一个开集 $O$ 使得 $E \subseteq O \subseteq (a, b)$，且 $m(O)< m(E) \cdot R/r$。
+
+现在 $O$ 可以写成 $\bigcup I_n$，其中 $I_n$ 是不相交的开区间。固定 $n$ 并对函数 $G(x)=-F(-x)+rx$ 在区间 $I_n$ 上应用推论 3.6。再次通过原点对称反射可得一个包含在 $I_n$ 中的开集 $\bigcup (a_k, b_k)$，其中区间 $(a_k, b_k)$ 互不相交，且满足
+$$ F(b_k)-F(a_k) \le r(b_k-a_k); $$
+然而，在每个区间 $(a_k, b_k)$ 上我们再次应用推论 3.6，这次针对函数 $G(x)=F(x)-Rx$。于是我们得到由互不相交的开区间 $(a_{k,j}, b_{k,j})$ 组成的开集 $O_n=\bigcup_{k,j}(a_{k,j}, b_{k,j})$，对于每个 $j$ 都有 $(a_{k,j}, b_{k,j}) \subseteq (a_k, b_k)$，且满足
+$$ F(b_{k,j})-F(a_{k,j}) \ge R(b_{k,j}-a_{k,j}). $$
+然后利用 $F$ 是递增函数的性质，我们发现
+$$
+\begin{aligned}
+m(O_n) &= \sum_{k,j}(b_{k,j}-a_{k,j}) \\
+&\le \frac{1}{R} \sum_{k,j}F(b_{k,j})-F(a_{k,j}) \\
+&\le \frac{1}{R} \sum_{k}F(b_k)-F(a_k) \\
+&\le \frac{r}{R} \sum_{k}(b_k-a_k) \\
+&\le \frac{r}{R} m(I_n).
+\end{aligned}
+$$
+注意到 $O_n \supseteq E \cap I_n$，因为对于每个 $x \in E$，都有 $D^+ F(x) > R$ 和 $r > D^- F(x)$；当然 $I_n \subseteq O$。我们现在对 $n$ 求和。因此
+$$ m(E) = \sum_{n} m(E \cap I_n) \le \sum_{n} m(O_n) \le \frac{r}{R} \sum_{n} m(I_n) = \frac{r}{R} m(O) < m(E). $$
+该严格不等式给出了矛盾，从而证明了定理 3.4，至少当 $F$ 是连续函数时成立。
+让我们看看如果 $F$ 是一个单调函数，我们在 (6) 方面取得了多大的进展。
+
+> 3. Differentiability of functions 125
+

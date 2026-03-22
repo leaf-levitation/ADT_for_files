@@ -1,0 +1,16 @@
+假设 $\Gamma = \{z(t); a \le t \le b\}$ 是一条拟简单曲线。$\Gamma$ 的 Minkowski 测度存在当且仅当 $\Gamma$ 是可求长的。若如此且 $L$ 为曲线的长度，则 $M(\Gamma) = L$。
+
+为了证明该定理，对于任意紧集 $K$，我们还考虑
+$$ M_*(K) = \limsup_{\epsilon \to 0} \frac{m(K_\epsilon)}{2\epsilon} \quad \text{和} \quad M^*(K) = \liminf_{\epsilon \to 0} \frac{m(K_\epsilon)}{2\epsilon} $$
+（两者均取扩充正数值）。当然 $M_*(K) \le M^*(K)$。
+说 Minkowski 测度存在等同于说 $M^*(K) < \infty$ 且 $M_*(K) = M^*(K)$。它们的共同值即为 $M(K)$。
+上述定理是两个关于 $M_*(K)$ 和 $M^*(K)$ 的命题的直接推论。第一个如下所示：
+
+假设 $\Gamma = \{z(t); a \le t \le b\}$ 是一条拟简单曲线。$\Gamma$ 的 Minkowski 测度存在当且仅当 $\Gamma$ 是可求长的。若如此且 $L$ 为曲线的长度，则 $M(\Gamma) = L$。
+
+为了证明该定理，对于任意紧集 $K$，我们还考虑
+$$ M_*(K) = \limsup_{\epsilon \to 0} \frac{m(K_\epsilon)}{2\epsilon} \quad \text{和} \quad M^*(K) = \liminf_{\epsilon \to 0} \frac{m(K_\epsilon)}{2\epsilon} $$
+（两者均取扩充正数值）。当然 $M_*(K) \le M^*(K)$。
+说 Minkowski 测度存在等同于说 $M^*(K) < \infty$ 且 $M_*(K) = M^*(K)$。它们的共同值即为 $M(K)$。
+上述定理是两个关于 $M_*(K)$ 和 $M^*(K)$ 的命题的直接推论。第一个如下所示：
+

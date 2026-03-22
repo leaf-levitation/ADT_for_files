@@ -1,0 +1,10 @@
+
+假设 $f$ 在 $\mathbb{R}^d$ 上可积，且 $\{K_\delta\}_{\delta>0}$ 是单位元的逼近。则对于每个 $\delta > 0$，卷积 $(f * K_\delta)(x) = \int_{\mathbb{R}^d} f(x-y)K_\delta(y)dy$ 是可积的，并且当 $\delta \to 0$ 时，$\|f * K_\delta - f\|_{L^1(\mathbb{R}^d)} \to 0$。
+
+证明仅仅是将第 2 章第 4* 节给出的特殊情况（其中 $K_\delta(x) = \delta^{-d/2} e^{-\pi |x|^2/\delta}$）的论证推广到更一般的语境中，因此不再重复。
+
+
+假设 $f$ 在 $\mathbb{R}^d$ 上可积，且 $\{K_\delta\}_{\delta>0}$ 是单位元的逼近。则对于每个 $\delta > 0$，卷积 $(f * K_\delta)(x) = \int_{\mathbb{R}^d} f(x-y)K_\delta(y)dy$ 是可积的，并且当 $\delta \to 0$ 时，$\|f * K_\delta - f\|_{L^1(\mathbb{R}^d)} \to 0$。
+
+证明仅仅是将第 2 章第 4* 节给出的特殊情况（其中 $K_\delta(x) = \delta^{-d/2} e^{-\pi |x|^2/\delta}$）的论证推广到更一般的语境中，因此不再重复。
+

@@ -1,0 +1,40 @@
+若 $F$ 单调递增且连续，则 $F'$ 几乎处处存在。此外，$F'$ 是可测的、非负的，并且满足
+$$ \int_a^b F'(x) \, dx \leq F(b) - F(a). $$
+特别地，如果 $F$ 在 $\mathbb{R}$ 上有界，则 $F'$ 在 $\mathbb{R}$ 上可积。
+
+证明：对于 $n \ge 1$，我们考虑差分商
+$$ G_n(x) = \frac{F(x + 1/n) - F(x)}{1/n}. $$
+由前一定理可知，对于几乎所有的 $x$，都有 $G_n(x) \to F'(x)$，这特别表明 $F'$ 是可测的且非负的。
+我们将 $F$ 延拓为定义在所有 $\mathbb{R}$ 上的连续函数。由法图引理（第 2 章引理 1.7）可知
+$$ \int_a^b F'(x) \, dx \leq \liminf_{n \to \infty} \int_a^b G_n(x) \, dx. $$
+为了完成证明，只需注意到$$
+\begin{align*}
+\int_a^b G_n(x) \, dx &= \frac{1}{1/n} \int_a^b F(x + 1/n) \, dx - \frac{1}{1/n} \int_a^b F(x) \, dx \\
+&= \frac{1}{1/n} \int_{a+1/n}^{b+1/n} F(y) \, dy - \frac{1}{1/n} \int_a^b F(x) \, dx \\
+&= \frac{1}{1/n} \int_b^{b+1/n} F(x) \, dx - \frac{1}{1/n} \int_a^{a+1/n} F(x) \, dx.
+\end{align*}
+$$
+由于 $F$ 连续，当 $n$ 趋于无穷大时，第一项和第二项分别收敛于 $F(b)$ 和 $F(a)$，因此推论的证明完成。
+
+如果我们允许所有连续的单调递增函数，则我们不能超越推论中的不等式，如下文所示的重要例子。
+
+若 $F$ 单调递增且连续，则 $F'$ 几乎处处存在。此外，$F'$ 是可测的、非负的，并且满足
+$$ \int_a^b F'(x) \, dx \leq F(b) - F(a). $$
+特别地，如果 $F$ 在 $\mathbb{R}$ 上有界，则 $F'$ 在 $\mathbb{R}$ 上可积。
+
+证明：对于 $n \ge 1$，我们考虑差分商
+$$ G_n(x) = \frac{F(x + 1/n) - F(x)}{1/n}. $$
+由前一定理可知，对于几乎所有的 $x$，都有 $G_n(x) \to F'(x)$，这特别表明 $F'$ 是可测的且非负的。
+我们将 $F$ 延拓为定义在所有 $\mathbb{R}$ 上的连续函数。由法图引理（第 2 章引理 1.7）可知
+$$ \int_a^b F'(x) \, dx \leq \liminf_{n \to \infty} \int_a^b G_n(x) \, dx. $$
+为了完成证明，只需注意到$$
+\begin{align*}
+\int_a^b G_n(x) \, dx &= \frac{1}{1/n} \int_a^b F(x + 1/n) \, dx - \frac{1}{1/n} \int_a^b F(x) \, dx \\
+&= \frac{1}{1/n} \int_{a+1/n}^{b+1/n} F(y) \, dy - \frac{1}{1/n} \int_a^b F(x) \, dx \\
+&= \frac{1}{1/n} \int_b^{b+1/n} F(x) \, dx - \frac{1}{1/n} \int_a^{a+1/n} F(x) \, dx.
+\end{align*}
+$$
+由于 $F$ 连续，当 $n$ 趋于无穷大时，第一项和第二项分别收敛于 $F(b)$ 和 $F(a)$，因此推论的证明完成。
+
+如果我们允许所有连续的单调递增函数，则我们不能超越推论中的不等式，如下文所示的重要例子。
+

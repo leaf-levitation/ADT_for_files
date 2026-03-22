@@ -1,0 +1,88 @@
+
+$4\pi m(\Omega) \leq l(\partial)^2$.
+
+证明． 对于每个 $\epsilon > 0$，我们考虑外部集合
+$$ \Omega_+(\epsilon) = \{ x \in \mathbb{R}^2 : d(x, \Omega) < \epsilon \}, $$
+以及内部集合
+$$ \Omega_-(\epsilon) = \{ x \in \mathbb{R}^2 : d(x, \Omega^c) \geq \epsilon \}. $$
+因此 $\Omega_-(\epsilon) \subset \Omega \subset \Omega_+(\epsilon)$。
+
+我们注意到，对于 $A_\epsilon = \{x : d(x, \partial) < \epsilon\}$，我们有
+$$ \Omega_+(\epsilon) = \Omega_-(\epsilon) \cup A_\epsilon, $$
+且该并集是不相交的。此外，如果 $D(\epsilon)$ 是以原点为中心、半径为 $\epsilon$ 的开球（圆盘），$D(\epsilon) = \{ x \in \mathbb{R}^2 : |x| < \epsilon \}$，则显然
+$$
+\begin{cases}
+\Omega_+(\epsilon) \supseteq \Omega + D(\epsilon); \\
+\Omega \supseteq \Omega_-(\epsilon) + D(\epsilon):
+\end{cases}
+$$
+
+> 144 第 3 章。微分与积分
+
+我们现在将布隆 - 明科夫斯基不等式（第 1 章定理 5.1）应用于第一个包含关系，并得到
+$$ m(K_+(\varepsilon)) \geq (m(K)^{1/2} + m(D(\varepsilon))^{1/2})^2 $$
+由于 $m(D(\varepsilon)) = \pi \varepsilon^2$（该标准公式在前一章的练习 14 中已建立），且当 $A$ 和 $B$ 为正数时 $(A+B)^2 \geq A^2 + 2AB$，我们得到
+$$ m(K_+(\varepsilon)) \geq m(K) + 2 \pi^{1/2} \varepsilon m(K)^{1/2} $$
+类似地，利用 (18) 中的第二个包含关系，有
+$$ m(K) \geq m(K_-(\varepsilon)) + 2 \pi^{1/2} \varepsilon m(K_-(\varepsilon))^{1/2} $$
+这蕴含了
+$$ -m(K_-(\varepsilon)) \geq -m(K) + 2 \pi^{1/2} \varepsilon m(K_-(\varepsilon))^{1/2} $$
+现在根据 (17)，
+$$ m(K_\varepsilon) = m(K_+(\varepsilon)) - m(K_-(\varepsilon)); $$
+结合上述不等式，我们有
+$$ m(K_\varepsilon) \geq 2 \pi^{1/2} \varepsilon (m(K)^{1/2} + m(K_-(\varepsilon))^{1/2}) $$
+现在我们将两边同时除以 $2\varepsilon$ 并取 $\varepsilon \to 0$ 时的上极限。这给出
+$$ M^*(K) \geq \pi^{1/2} (2 m(K)^{1/2}) $$
+
+> 5. Exercises 145
+
+由于当 ε→0 时，$|\partial \Omega_\varepsilon| \to 0$。然而，根据命题 4.7，$\text{Cap}(\partial \Omega) \le M(\partial \Omega)$，所以
+$$
+\text{Cap}(\partial \Omega) \le 2^{-1/2} m(\Omega)^{1/2};
+$$
+这证明了该定理。
+
+
+$4\pi m(\Omega) \leq l(\partial)^2$.
+
+证明． 对于每个 $\epsilon > 0$，我们考虑外部集合
+$$ \Omega_+(\epsilon) = \{ x \in \mathbb{R}^2 : d(x, \Omega) < \epsilon \}, $$
+以及内部集合
+$$ \Omega_-(\epsilon) = \{ x \in \mathbb{R}^2 : d(x, \Omega^c) \geq \epsilon \}. $$
+因此 $\Omega_-(\epsilon) \subset \Omega \subset \Omega_+(\epsilon)$。
+
+我们注意到，对于 $A_\epsilon = \{x : d(x, \partial) < \epsilon\}$，我们有
+$$ \Omega_+(\epsilon) = \Omega_-(\epsilon) \cup A_\epsilon, $$
+且该并集是不相交的。此外，如果 $D(\epsilon)$ 是以原点为中心、半径为 $\epsilon$ 的开球（圆盘），$D(\epsilon) = \{ x \in \mathbb{R}^2 : |x| < \epsilon \}$，则显然
+$$
+\begin{cases}
+\Omega_+(\epsilon) \supseteq \Omega + D(\epsilon); \\
+\Omega \supseteq \Omega_-(\epsilon) + D(\epsilon):
+\end{cases}
+$$
+
+> 144 第 3 章。微分与积分
+
+我们现在将布隆 - 明科夫斯基不等式（第 1 章定理 5.1）应用于第一个包含关系，并得到
+$$ m(K_+(\varepsilon)) \geq (m(K)^{1/2} + m(D(\varepsilon))^{1/2})^2 $$
+由于 $m(D(\varepsilon)) = \pi \varepsilon^2$（该标准公式在前一章的练习 14 中已建立），且当 $A$ 和 $B$ 为正数时 $(A+B)^2 \geq A^2 + 2AB$，我们得到
+$$ m(K_+(\varepsilon)) \geq m(K) + 2 \pi^{1/2} \varepsilon m(K)^{1/2} $$
+类似地，利用 (18) 中的第二个包含关系，有
+$$ m(K) \geq m(K_-(\varepsilon)) + 2 \pi^{1/2} \varepsilon m(K_-(\varepsilon))^{1/2} $$
+这蕴含了
+$$ -m(K_-(\varepsilon)) \geq -m(K) + 2 \pi^{1/2} \varepsilon m(K_-(\varepsilon))^{1/2} $$
+现在根据 (17)，
+$$ m(K_\varepsilon) = m(K_+(\varepsilon)) - m(K_-(\varepsilon)); $$
+结合上述不等式，我们有
+$$ m(K_\varepsilon) \geq 2 \pi^{1/2} \varepsilon (m(K)^{1/2} + m(K_-(\varepsilon))^{1/2}) $$
+现在我们将两边同时除以 $2\varepsilon$ 并取 $\varepsilon \to 0$ 时的上极限。这给出
+$$ M^*(K) \geq \pi^{1/2} (2 m(K)^{1/2}) $$
+
+> 5. Exercises 145
+
+由于当 ε→0 时，$|\partial \Omega_\varepsilon| \to 0$。然而，根据命题 4.7，$\text{Cap}(\partial \Omega) \le M(\partial \Omega)$，所以
+$$
+\text{Cap}(\partial \Omega) \le 2^{-1/2} m(\Omega)^{1/2};
+$$
+这证明了该定理。
+

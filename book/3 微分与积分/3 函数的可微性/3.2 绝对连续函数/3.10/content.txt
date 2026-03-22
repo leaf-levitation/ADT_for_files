@@ -1,0 +1,46 @@
+我们可以安排球的选取使得
+$$ m\left(E \setminus \bigcup_{i=1}^N B_i\right) < 2\varepsilon $$
+事实上，令 $O$ 为一个开集，满足 $O \supset E$ 且 $m(O \setminus E) < \varepsilon$。由于我们正在处理 $E$ 的维塔利覆盖，我们可以将上述所有选取限制在包含于 $O$ 内的球上。如果我们这样做，那么 $(E \setminus \bigcup_{i=1}^N B_i) \cup \bigcup_{i=1}^N B_i \subset O$，其中左侧的并集是一个不交并。因此
+$$ m\left(E \setminus \bigcup_{i=1}^N B_i\right) \le m(O) - m\left(\bigcup_{i=1}^N B_i\right) \le m(E) + \varepsilon - (m(E) - \varepsilon) = 2\varepsilon $$
+
+我们现在回到实数轴上的情况。为了完成该定理的证明，只需证明在假设条件下有 $F(b) = F(a)$，因为一旦证明了这一点，我们就可用任意子区间替换 $[a, b]$。现在设 $E$ 为满足 $x \in (a, b)$ 且 $F'(x)$ 存在且为零的那些点的集合。根据假设 $m(E) = b - a$。接下来，暂时固定 $\delta > 0$。由于对于每个 $x \in E$ 我们有
+$$ \lim_{h \to 0} \left| \frac{F(x+h) - F(x)}{h} \right| = 0 $$
+
+>130 第 3 章 微分与积分
+
+于是对于每个 $\varepsilon > 0$，我们都有一个包含 $x$ 的开区间 $I = (a_x, b_x) \subset [a, b]$，满足
+$$|F(b_x) - F(a_x)| \leq \varepsilon(b_x - a_x) \quad \text{且} \quad b_x - a_x < \varepsilon.$$
+这些区间的集合构成了 $E$ 的一个维塔利覆盖（Vitali covering），因此根据该引理，对于 $\delta > 0$，我们可以选择有限个 $I_i, 1 \le i \le N$，
+$I_i = (a_i, b_i)$，它们互不相交，并且满足
+(9) $\sum_{i=1}^N m(I_i) \geq m(E) - \delta = (b-a) - \delta.$
+然而，$|F(b_i) - F(a_i)| \leq \varepsilon(b_i - a_i)$，将这些不等式相加得到
+$$\sum_{i=1}^N |F(b_i) - F(a_i)| \leq \varepsilon(b-a);$$
+由于区间 $I_i$ 互不相交且位于 $[a, b]$ 内。接下来考虑 $[a, b]$ 中 $\bigcup_{j=1}^N I_j$ 的补集。它由有限个闭区间 $\bigcup_{k=1}^M [\alpha_k, \beta_k]$ 组成，总长度 $\leq \delta$，这是因为 (9)。因此，根据 $F$ 的绝对连续性（如果 $\delta$ 根据 $\varepsilon$ 选择得适当），$\sum_{k=1}^M |F(\beta_k) - F(\alpha_k)| \leq \varepsilon$。综上所述，
+$$|F(b) - F(a)| \leq \sum_{i=1}^N |F(b_i) - F(a_i)| + \sum_{k=1}^M |F(\beta_k) - F(\alpha_k)| \leq \varepsilon(b-a) + \varepsilon.$$
+由于 $\varepsilon$ 是正数但在其他方面是任意的，我们得出 $F(b) - F(a) = 0$，这正是我们要证明的。
+
+我们所有努力的成果都包含在下述定理中。特别是，它解决了我们在确立微分与积分之间的互逆性的第二个问题。
+
+我们可以安排球的选取使得
+$$ m\left(E \setminus \bigcup_{i=1}^N B_i\right) < 2\varepsilon $$
+事实上，令 $O$ 为一个开集，满足 $O \supset E$ 且 $m(O \setminus E) < \varepsilon$。由于我们正在处理 $E$ 的维塔利覆盖，我们可以将上述所有选取限制在包含于 $O$ 内的球上。如果我们这样做，那么 $(E \setminus \bigcup_{i=1}^N B_i) \cup \bigcup_{i=1}^N B_i \subset O$，其中左侧的并集是一个不交并。因此
+$$ m\left(E \setminus \bigcup_{i=1}^N B_i\right) \le m(O) - m\left(\bigcup_{i=1}^N B_i\right) \le m(E) + \varepsilon - (m(E) - \varepsilon) = 2\varepsilon $$
+
+我们现在回到实数轴上的情况。为了完成该定理的证明，只需证明在假设条件下有 $F(b) = F(a)$，因为一旦证明了这一点，我们就可用任意子区间替换 $[a, b]$。现在设 $E$ 为满足 $x \in (a, b)$ 且 $F'(x)$ 存在且为零的那些点的集合。根据假设 $m(E) = b - a$。接下来，暂时固定 $\delta > 0$。由于对于每个 $x \in E$ 我们有
+$$ \lim_{h \to 0} \left| \frac{F(x+h) - F(x)}{h} \right| = 0 $$
+
+>130 第 3 章 微分与积分
+
+于是对于每个 $\varepsilon > 0$，我们都有一个包含 $x$ 的开区间 $I = (a_x, b_x) \subset [a, b]$，满足
+$$|F(b_x) - F(a_x)| \leq \varepsilon(b_x - a_x) \quad \text{且} \quad b_x - a_x < \varepsilon.$$
+这些区间的集合构成了 $E$ 的一个维塔利覆盖（Vitali covering），因此根据该引理，对于 $\delta > 0$，我们可以选择有限个 $I_i, 1 \le i \le N$，
+$I_i = (a_i, b_i)$，它们互不相交，并且满足
+(9) $\sum_{i=1}^N m(I_i) \geq m(E) - \delta = (b-a) - \delta.$
+然而，$|F(b_i) - F(a_i)| \leq \varepsilon(b_i - a_i)$，将这些不等式相加得到
+$$\sum_{i=1}^N |F(b_i) - F(a_i)| \leq \varepsilon(b-a);$$
+由于区间 $I_i$ 互不相交且位于 $[a, b]$ 内。接下来考虑 $[a, b]$ 中 $\bigcup_{j=1}^N I_j$ 的补集。它由有限个闭区间 $\bigcup_{k=1}^M [\alpha_k, \beta_k]$ 组成，总长度 $\leq \delta$，这是因为 (9)。因此，根据 $F$ 的绝对连续性（如果 $\delta$ 根据 $\varepsilon$ 选择得适当），$\sum_{k=1}^M |F(\beta_k) - F(\alpha_k)| \leq \varepsilon$。综上所述，
+$$|F(b) - F(a)| \leq \sum_{i=1}^N |F(b_i) - F(a_i)| + \sum_{k=1}^M |F(\beta_k) - F(\alpha_k)| \leq \varepsilon(b-a) + \varepsilon.$$
+由于 $\varepsilon$ 是正数但在其他方面是任意的，我们得出 $F(b) - F(a) = 0$，这正是我们要证明的。
+
+我们所有努力的成果都包含在下述定理中。特别是，它解决了我们在确立微分与积分之间的互逆性的第二个问题。
+
